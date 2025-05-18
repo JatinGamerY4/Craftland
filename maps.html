@@ -39,9 +39,10 @@
       color: inherit;
     }
 
-    .card img {
+    .card-image {
       width: 100%;
-      height: auto;
+      height: 170px;
+      object-fit: cover; /* removes black bars */
       display: block;
     }
 
@@ -61,13 +62,13 @@
 
     <!-- Card 1 -->
     <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Map">
+      <img class="card-image" src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Map">
       <div class="card-title">A Horror Escape Chapter 1</div>
     </a>
 
     <!-- Card 2 -->
     <a href="https://youtu.be/-r43gZNiKko?si=uZ6ckHz3s4fDK3nY" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg" alt="GTA-V Map">
+      <img class="card-image" src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg" alt="GTA-V Map">
       <div class="card-title">GTA-V</div>
     </a>
 
