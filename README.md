@@ -84,12 +84,12 @@
   <div class="video-section">
     <a class="video-link" href="https://youtu.be/MiwqlbYlPC4?si=G6rsKX1Nqx-R_PXU" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/MiwqlbYlPC4/hqdefault.jpg" alt="Video 1 Thumbnail">
-      <div class="video-title">Video 1</div>
+      <div class="video-title">Add Limits Script</div>
     </a>
 
     <a class="video-link" href="https://youtu.be/C9HkfSy-iDI" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/C9HkfSy-iDI/hqdefault.jpg" alt="Video 2 Thumbnail">
-      <div class="video-title">Video 2</div>
+      <div class="video-title">2d Camera Script</div>
     </a>
   </div>
 
