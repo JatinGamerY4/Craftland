@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Craftland - Maps</title>
+  <meta charset="UTF-8" />
+  <title>Craftland - Maps Page</title>
   <style>
     body {
       margin: 0;
@@ -18,48 +18,36 @@
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 22px;
       color: #1976d2;
       margin-top: 4px;
-      margin-bottom: 16px;
-    }
-
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
       overflow: hidden;
-      width: 240px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .thumbnail {
-      width: 100%;
-      display: block;
-    }
-
-    .caption {
-      padding: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-    }
-
-    a {
+      margin-bottom: 16px;
       text-decoration: none;
       color: inherit;
     }
+
+    .card img {
+      width: 160px;
+      height: auto;
+      display: block;
+    }
+
+    .card-title {
+      padding: 16px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
@@ -67,14 +55,11 @@
   <h1>Craftland</h1>
   <h2>Maps Page</h2>
 
-  <div class="card-container">
-    <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank">
-      <div class="card">
-        <img class="thumbnail" src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Escape">
-        <div class="caption">A Horror Escape Chapter 1</div>
-      </div>
-    </a>
-  </div>
+  <!-- Map Card 1 -->
+  <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank" class="card">
+    <img src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Escape Thumbnail">
+    <div class="card-title">A Horror Escape Chapter 1</div>
+  </a>
 
 </body>
 </html>
