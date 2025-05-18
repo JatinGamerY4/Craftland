@@ -21,6 +21,7 @@
     .button-container {
       display: flex;
       gap: 20px;
+      margin-bottom: 40px;
     }
 
     .top-button {
@@ -34,6 +35,40 @@
       background: linear-gradient(to right, green, orange);
       cursor: pointer;
     }
+
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .video-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      transition: box-shadow 0.3s;
+    }
+
+    .video-link:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-thumbnail {
+      width: 160px;
+      height: 90px;
+      object-fit: cover;
+    }
+
+    .video-title {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +79,18 @@
     <button class="top-button">Tutorials</button>
     <button class="top-button">Codes</button>
     <button class="top-button">Assets</button>
+  </div>
+
+  <div class="video-section">
+    <a class="video-link" href="https://youtu.be/MiwqlbYlPC4?si=G6rsKX1Nqx-R_PXU" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/MiwqlbYlPC4/hqdefault.jpg" alt="Video 1 Thumbnail">
+      <div class="video-title">Video 1</div>
+    </a>
+
+    <a class="video-link" href="https://youtu.be/C9HkfSy-iDI" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/C9HkfSy-iDI/hqdefault.jpg" alt="Video 2 Thumbnail">
+      <div class="video-title">Video 2</div>
+    </a>
   </div>
 
 </body>
