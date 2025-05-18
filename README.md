@@ -24,7 +24,7 @@
       margin-bottom: 40px;
     }
 
-    .top-button, .top-button-link {
+    .top-button-link {
       width: 100px;
       height: 60px;
       border: none;
@@ -88,7 +88,7 @@
   <div class="button-container">
     <a href="maps.html" class="top-button-link">Maps</a>
     <a href="https://0xme.github.io/ItemID2/?mode=2" class="top-button-link" target="_blank">Codes</a>
-    <button class="top-button">Assets</button>
+    <a href="assets.html" class="top-button-link">Assets</a>
   </div>
 
   <div class="video-section">
