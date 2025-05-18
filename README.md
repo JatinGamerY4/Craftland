@@ -68,6 +68,12 @@
       font-size: 16px;
       font-weight: bold;
     }
+
+    .watch-more {
+      justify-content: center;
+      padding: 20px;
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
@@ -83,12 +89,12 @@
   <div class="video-section">
     <a class="video-link" href="https://youtu.be/MiwqlbYlPC4?si=G6rsKX1Nqx-R_PXU" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/MiwqlbYlPC4/hqdefault.jpg" alt="Video 1 Thumbnail">
-      <div class="video-title">Add Limits</div>
+      <div class="video-title">Add Limits Script</div>
     </a>
 
     <a class="video-link" href="https://youtu.be/C9HkfSy-iDI" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/C9HkfSy-iDI/hqdefault.jpg" alt="Video 2 Thumbnail">
-      <div class="video-title">2D Camera</div>
+      <div class="video-title">2D Camera Script</div>
     </a>
 
     <a class="video-link" href="https://youtu.be/ik5kmfaoCbw?si=AQCklWg7zf-XcCDX" target="_blank">
@@ -96,9 +102,8 @@
       <div class="video-title">Spin Wheel</div>
     </a>
 
-    <a class="video-link" href="https://youtube.com/@jatingamery4?si=d_aTTv89b2sd4TJZ" target="_blank">
-      <img class="video-thumbnail" src="jatin_channel_photo.jpg" alt="Jatin Gamer Y4 Channel">
-      <div class="video-title">Watch More</div>
+    <a class="video-link watch-more" href="https://youtube.com/@jatingamery4?si=d_aTTv89b2sd4TJZ" target="_blank">
+      Watch More
     </a>
   </div>
 
