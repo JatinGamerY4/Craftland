@@ -38,7 +38,7 @@
 </head>
 <body>
 
-  <div class="heading">Craftland</div>
+  <div class="heading">Main Page</div>
 
   <div class="button-container">
     <button class="top-button">Tutorials</button>
