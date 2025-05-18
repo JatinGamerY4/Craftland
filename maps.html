@@ -6,70 +6,59 @@
   <style>
     body {
       margin: 0;
-      padding: 20px;
+      padding: 16px;
       background-color: #f5f5f5;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 24px;
       color: #1976d2;
       margin-bottom: 0;
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 18px;
       color: #1976d2;
-      margin-top: 10px;
-      margin-bottom: 30px;
+      margin-top: 4px;
+      margin-bottom: 16px;
     }
 
-    .video-container {
+    .card-container {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .card {
-      display: flex;
-      background-color: white;
-      border-radius: 12px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 240px;
+      text-align: center;
       transition: transform 0.2s;
     }
 
     .card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     .thumbnail {
-      width: 50%;
-      object-fit: cover;
+      width: 100%;
+      display: block;
     }
 
-    .card-content {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 20px;
+    .caption {
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 500;
       color: #333;
-      width: 50%;
     }
 
     a {
       text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .card {
-        flex-direction: column;
-      }
-      .thumbnail, .card-content {
-        width: 100%;
-      }
+      color: inherit;
     }
   </style>
 </head>
@@ -78,11 +67,11 @@
   <h1>Craftland</h1>
   <h2>Maps Page</h2>
 
-  <div class="video-container">
+  <div class="card-container">
     <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank">
       <div class="card">
         <img class="thumbnail" src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Escape">
-        <div class="card-content">A Horror Escape Chapter 1</div>
+        <div class="caption">A Horror Escape Chapter 1</div>
       </div>
     </a>
   </div>
