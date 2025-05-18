@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -73,6 +74,7 @@
       justify-content: center;
       padding: 20px;
       font-size: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -81,7 +83,7 @@
   <div class="heading">Main Page</div>
 
   <div class="button-container">
-    <button class="top-button">Maps</button>
+    <button class="top-button" onclick="window.open('maps.html', '_blank')">Maps</button>
     <button class="top-button">Codes</button>
     <button class="top-button">Assets</button>
   </div>
