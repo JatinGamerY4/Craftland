@@ -24,7 +24,7 @@
       margin-bottom: 40px;
     }
 
-    .top-button {
+    .top-button, .top-button-link {
       width: 100px;
       height: 60px;
       border: none;
@@ -34,6 +34,10 @@
       border-radius: 8px;
       background: linear-gradient(to right, green, orange);
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
     .video-section {
@@ -74,7 +78,6 @@
       justify-content: center;
       padding: 20px;
       font-size: 20px;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -83,8 +86,8 @@
   <div class="heading">Main Page</div>
 
   <div class="button-container">
-    <button class="top-button" onclick="window.open('maps.html', '_blank')">Maps</button>
-    <button class="top-button">Codes</button>
+    <a href="maps.html" class="top-button-link">Maps</a>
+    <a href="https://0xme.github.io/ItemID2/?mode=2" class="top-button-link" target="_blank">Codes</a>
     <button class="top-button">Assets</button>
   </div>
 
