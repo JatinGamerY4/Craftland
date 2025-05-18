@@ -95,6 +95,11 @@
       <img class="video-thumbnail" src="https://img.youtube.com/vi/ik5kmfaoCbw/hqdefault.jpg" alt="Video 3 Thumbnail">
       <div class="video-title">Spin Wheel</div>
     </a>
+
+    <a class="video-link" href="https://youtube.com/@jatingamery4?si=d_aTTv89b2sd4TJZ" target="_blank">
+      <img class="video-thumbnail" src="jatin_channel_photo.jpg" alt="Jatin Gamer Y4 Channel">
+      <div class="video-title">Watch More</div>
+    </a>
   </div>
 
 </body>
