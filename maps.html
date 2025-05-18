@@ -22,13 +22,21 @@
       font-size: 16px;
     }
 
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
     .card {
       width: 300px;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      margin-bottom: 20px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card img {
@@ -42,17 +50,6 @@
       font-weight: bold;
       text-align: center;
     }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
   </style>
 </head>
 <body>
@@ -60,22 +57,18 @@
   <h1>Craftland</h1>
   <h2>Maps Page</h2>
 
-  <div class="container">
+  <div class="cards-container">
 
-    <!-- First Card -->
-    <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank">
-      <div class="card">
-        <img src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Map">
-        <div class="card-title">A Horror Escape Chapter 1</div>
-      </div>
+    <!-- Card 1 -->
+    <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank" class="card">
+      <img src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Map">
+      <div class="card-title">A Horror Escape Chapter 1</div>
     </a>
 
-    <!-- Second Card -->
-    <a href="https://youtu.be/-r43gZNiKko?si=uZ6ckHz3s4fDK3nY" target="_blank">
-      <div class="card">
-        <img src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg" alt="GTA-V Map">
-        <div class="card-title">GTA-V</div>
-      </div>
+    <!-- Card 2 -->
+    <a href="https://youtu.be/-r43gZNiKko?si=uZ6ckHz3s4fDK3nY" target="_blank" class="card">
+      <img src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg" alt="GTA-V Map">
+      <div class="card-title">GTA-V</div>
     </a>
 
   </div>
