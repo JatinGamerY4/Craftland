@@ -75,7 +75,7 @@
   <div class="heading">Main Page</div>
 
   <div class="button-container">
-    <button class="top-button">Tutorials</button>
+    <button class="top-button">Maps</button>
     <button class="top-button">Codes</button>
     <button class="top-button">Assets</button>
   </div>
@@ -93,7 +93,7 @@
 
     <a class="video-link" href="https://youtu.be/ik5kmfaoCbw?si=AQCklWg7zf-XcCDX" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/ik5kmfaoCbw/hqdefault.jpg" alt="Video 3 Thumbnail">
-      <div class="video-title">Spni Wheel</div>
+      <div class="video-title">Spin Wheel</div>
     </a>
   </div>
 
