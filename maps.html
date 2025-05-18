@@ -27,15 +27,34 @@
       padding-bottom: 10px;
     }
 
-    .content {
-      font-size: 18px;
-      color: #333;
+    .video-card {
+      width: fit-content;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      text-align: center;
     }
 
-    .placeholder {
-      font-size: 16px;
-      color: #777;
-      margin-top: 40px;
+    .video-card img {
+      width: 320px;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-card .video-title {
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .video-card a {
+      text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
@@ -44,9 +63,11 @@
   <div class="heading-main">Craftland</div>
   <div class="heading-sub">Maps Page</div>
 
-  <div class="content">
-    <!-- Yaha future mei maps ka content add kiya jayega -->
-    <div class="placeholder">No maps available yet. Stay tuned!</div>
+  <div class="video-card">
+    <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank">
+      <img src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg" alt="Horror Escape Thumbnail">
+      <div class="video-title">A Horror Escape Chapter 1</div>
+    </a>
   </div>
 
 </body>
