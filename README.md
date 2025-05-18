@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Buttons UI</title>
+  <title>Craftland</title>
   <style>
     body {
       margin: 0;
@@ -11,9 +11,15 @@
       font-family: Arial, sans-serif;
     }
 
+    .heading {
+      font-size: 32px;
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
     .button-container {
       display: flex;
-      justify-content: start;
       gap: 20px;
     }
 
@@ -31,6 +37,8 @@
   </style>
 </head>
 <body>
+
+  <div class="heading">Craftland</div>
 
   <div class="button-container">
     <button class="top-button">Tutorials</button>
