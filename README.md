@@ -97,6 +97,14 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    .email-text {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
   </style>
 </head>
 <body>
@@ -136,6 +144,10 @@
     <a class="video-link instagram-button" href="https://www.instagram.com/jatingamery4" target="_blank">
       Instagram
     </a>
+
+    <div class="email-text">
+      Email: jatingamery411@gmail.com
+    </div>
   </div>
 
 </body>
