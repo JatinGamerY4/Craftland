@@ -74,11 +74,27 @@
       font-weight: bold;
     }
 
-    .watch-more {
+    .watch-more,
+    .discord-button {
+      display: flex;
       justify-content: center;
-      padding: 20px;
+      align-items: center;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
       font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+      color: #000;
+      transition: box-shadow 0.3s;
     }
+
+    .watch-more:hover,
+    .discord-button:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
   </style>
 </head>
 <body>
@@ -109,6 +125,10 @@
 
     <a class="video-link watch-more" href="https://youtube.com/@jatingamery4?si=d_aTTv89b2sd4TJZ" target="_blank">
       Watch More
+    </a>
+
+    <a class="video-link discord-button" href="https://discord.gg/THYBW9ER" target="_blank">
+      Discord Server
     </a>
   </div>
 
