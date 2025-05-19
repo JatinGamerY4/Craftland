@@ -75,7 +75,8 @@
     }
 
     .watch-more,
-    .discord-button {
+    .discord-button,
+    .instagram-button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -91,7 +92,8 @@
     }
 
     .watch-more:hover,
-    .discord-button:hover {
+    .discord-button:hover,
+    .instagram-button:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -129,6 +131,10 @@
 
     <a class="video-link discord-button" href="https://discord.gg/THYBW9ER" target="_blank">
       Discord Server
+    </a>
+
+    <a class="video-link instagram-button" href="https://www.instagram.com/jatingamery4" target="_blank">
+      Instagram
     </a>
   </div>
 
