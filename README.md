@@ -28,11 +28,11 @@
     .button-row {
       display: flex;
       gap: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       flex-wrap: nowrap;
     }
 
-    .top-button {
+    .top-button, .bottom-button {
       flex: 1;
       height: 60px;
       border: none;
@@ -48,6 +48,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      margin-bottom: 30px;
     }
 
     .video-link {
@@ -76,6 +77,18 @@
       padding: 10px;
       font-size: 16px;
       font-weight: bold;
+    }
+
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .email-text {
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
@@ -121,6 +134,13 @@
     <img class="video-thumbnail" src="https://img.youtube.com/vi/ik5kmfaoCbw/hqdefault.jpg" alt="Video 3">
     <div class="video-title">Spin Wheel</div>
   </a>
+</div>
+
+<div class="bottom-section">
+  <button class="bottom-button" onclick="location.href='more.html'">Watch More</button>
+  <button class="bottom-button" onclick="location.href='https://discord.gg/THYBW9ER'">Discord Server</button>
+  <button class="bottom-button" onclick="location.href='https://www.instagram.com/jatingamery4'">Instagram</button>
+  <div class="email-text">Email: jatingamery411@gmail.com</div>
 </div>
 
 </body>
