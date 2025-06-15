@@ -106,7 +106,7 @@
 <div class="video-section">
   <a class="video-link" href="https://youtu.be/811A6ycI0SQ?si=SSuA9XV-ZTXgjmgn" target="_blank">
     <img class="video-thumbnail" src="https://img.youtube.com/vi/811A6ycI0SQ/hqdefault.jpg" alt="Video 1">
-    <div class="video-title">Breakable Block</div>
+    <div class="video-title">Break Blocks</div>
   </a>
 
   <a class="video-link" href="https://youtu.be/C9HkfSy-iDI" target="_blank">
