@@ -1,120 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craftland - Assets Codes</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      padding: 16px;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
     }
-
-    .heading {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1976d2;
+    h2 {
+      color: #007bff;
       text-align: center;
       margin-bottom: 20px;
     }
-
-    #searchInput {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #aaa;
+    .search-container {
+      display: flex;
+      justify-content: center;
       margin-bottom: 20px;
     }
-
-    .code-item {
-      background-color: white;
-      border-radius: 8px;
-      padding: 14px;
+    input[type="text"] {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
       font-size: 16px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      margin-bottom: 15px;
-      word-wrap: break-word;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-
-    .hidden {
-      display: none;
+    .code-list {
+      max-width: 600px;
+      margin: auto;
+    }
+    .code-item {
+      background: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-
-  <div class="heading">Craftland - Assets Codes</div>
-
-  <input type="text" id="searchInput" placeholder="Search by keyword...">
-
-  <div id="codeList">
-    <div class="code-item" data-keywords="ship">
-      SHIP: #ASSET9B5BA7E05B6743E1A06B72A5F589805F5676
-    </div>
-    <div class="code-item" data-keywords="boat">
-      BOAT: #ASSETE7356CBD95D144B7ACC278A0462330CF5676
-    </div>
-    <div class="code-item" data-keywords="air balloon">
-      AIR BALLOON: #ASSETC6F8F0901BA945A09D05439D1A35EE235676
-    </div>
-    <div class="code-item" data-keywords="3d bomb">
-      3D BOMB: #ASSET23A4AA12B9574ABCA0C7AD804E62046A5676
-    </div>
-    <div class="code-item" data-keywords="slide">
-      SLIDE: #ASSET01B36E81FFA8495F9060871C8D120D215676
-    </div>
-    <div class="code-item" data-keywords="jeep">
-      JEEP: #ASSETCFF696C7E3034E229570FBAD43BF6F285676
-    </div>
-    <div class="code-item" data-keywords="normal tree">
-      NORMAL TREE: #ASSET3D779386B05F409C90EF2995F89F7EA05676
-    </div>
-    <div class="code-item" data-keywords="spikes">
-      SPIKES: #ASSET7D300F16DAD44D1DA5D072D71CEA16735676
-    </div>
-    <div class="code-item" data-keywords="tillt tree">
-      TILLT TREE: #ASSETA6BE66BB84B044599C68E58051C5AD885676
-    </div>
-    <div class="code-item" data-keywords="assets pack">
-      ASSETS PACK: #ASSETDA7027426F7642B09207D9F470E758845676
-    </div>
-    <div class="code-item" data-keywords="sliding door">
-      SLIDING DOOR: #ASSET6CDD796DE3D045319E51447CD9A8A7B25676
-    </div>
-    <div class="code-item" data-keywords="squid game house">
-      SQUID GAME HOUSE: #ASSETE568C1CA07574F38A7C4A288D1BECE725676
-    </div>
-    <div class="code-item" data-keywords="squid game logo">
-      SQUID GAME LOGO: #ASSET19814F4C0E0F4878BE78334AC64DD4FC5676
-    </div>
-    <div class="code-item" data-keywords="roads assets pack">
-      ROADS ASSETS PACK: #ASSETE3758A5EB4B44C94AC4A129ED709CB605676
-    </div>
+  <h2>Craftland - Assets Codes</h2>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search by keyword..." onkeyup="filterCodes()"/>
   </div>
-
+  <div class="code-list" id="codeList">
+    <div class="code-item" data-keywords="ship">SHIP: #ASSET9B5BA7E05B6743E1A06B72A5F589805F5676</div>
+    <div class="code-item" data-keywords="boat">BOAT: #ASSETE7356CBD95D144B7ACC278A0462330CF5676</div>
+    <div class="code-item" data-keywords="air balloon">AIR BALLOON: #ASSETC6F8F0901BA945A09D05439D1A35EE235676</div>
+    <div class="code-item" data-keywords="3d bomb">3D BOMB: #ASSET23A4AA12B9574ABCA0C7AD804E62046A5676</div>
+    <div class="code-item" data-keywords="slide">SLIDE: #ASSET01B36E81FFA8495F9060871C8D120D215676</div>
+    <div class="code-item" data-keywords="jeep">JEEP: #ASSETCFF696C7E3034E229570FBAD43BF6F285676</div>
+    <div class="code-item" data-keywords="normal tree">NORMAL TREE: #ASSET3D779386B05F409C90EF2995F89F7EA05676</div>
+    <div class="code-item" data-keywords="spikes">SPIKES: #ASSET7D300F16DAD44D1DA5D072D71CEA16735676</div>
+    <div class="code-item" data-keywords="tillt tree">TILLT TREE: #ASSETA6BE66BB84B044599C68E58051C5AD885676</div>
+    <div class="code-item" data-keywords="assets pack">ASSETS PACK: #ASSETDA7027426F7642B09207D9F470E758845676</div>
+    <div class="code-item" data-keywords="sliding door">SLIDING DOOR: #ASSET6CDD796DE3D045319E51447CD9A8A7B25676</div>
+    <div class="code-item" data-keywords="squid game house">SQUID GAME HOUSE: #ASSETE568C1CA07574F38A7C4A288D1BECE725676</div>
+    <div class="code-item" data-keywords="squid game logo">SQUID GAME LOGO: #ASSET19814F4C0E0F4878BE78334AC64DD4FC5676</div>
+    <div class="code-item" data-keywords="roads assets pack">ROADS ASSETS PACK: #ASSETE3758A5EB4B44C94AC4A129ED709CB605676</div>
+    <div class="code-item" data-keywords="bed">BED: #ASSETCBBE7EF63C134BB6B4B693528B5AFD115676</div>
+    <div class="code-item" data-keywords="lattu">LATTU: #ASSET194E8140D7B7419D9E85939E4F5B85E25676</div>
+    <div class="code-item" data-keywords="key">KEY: #ASSET48D28BC4C88843138B9A960FAEE465225676</div>
+    <div class="code-item" data-keywords="hud remove">HUD REMOVE: #ASSETFDA812DD07044F8D97DC19F579E94D675676</div>
+  </div>
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const codeItems = document.querySelectorAll('.code-item');
+    function filterCodes() {
+      var input = document.getElementById("search");
+      var filter = input.value.toLowerCase();
+      var items = document.querySelectorAll(".code-item");items.forEach(function(item) {
+    var keywords = item.getAttribute("data-keywords");
+    if (keywords.includes(filter)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
 
-    searchInput.addEventListener('input', function () {
-      const query = this.value.trim().toLowerCase();
-      codeItems.forEach(item => {
-        const keywords = item.dataset.keywords.toLowerCase();
-        if (keywords.includes(query) || query === '') {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
   </script>
-
 </body>
 </html>
