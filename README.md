@@ -125,6 +125,7 @@
   <button class="bottom-button" onclick="location.href='https://discord.gg/THYBW9ER'">Discord Server</button>
   <button class="bottom-button" onclick="location.href='https://www.instagram.com/jatingamery4'">Instagram</button>
   <div class="email-text">Email: jatingamery411@gmail.com</div>
+  <div class="msg-text">Contact Me For Custom Maps, Paid Maps</div>
 </div>
 
 </body>
