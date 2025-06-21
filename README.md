@@ -124,8 +124,8 @@
   <button class="bottom-button" onclick="location.href='https://youtube.com/@jatingamery4?si=HIaEeaxK8dG6gf0U'">Watch More</button>
   <button class="bottom-button" onclick="location.href='https://discord.gg/THYBW9ER'">Discord Server</button>
   <button class="bottom-button" onclick="location.href='https://www.instagram.com/jatingamery4'">Instagram</button>
-  <div class="email-text">Email: jatingamery411@gmail.com</div 
- </div>
+  <div class="email-text">Email: jatingamery411@gmail.com</div>
+</div>
 
 </body>
 </html>
