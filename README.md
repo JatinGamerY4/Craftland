@@ -106,17 +106,17 @@
 <div class="video-section">
   <a class="video-link" href="https://youtu.be/CqiRcReBlj0?si=ttx3INx9ud9Nk0PS" target="_blank">
   <img class="video-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
-  <div class="video-title">Pointing Arrow</div>
+  <div class="video-title">Point Arrow</div>
 </a>
 
 <a class="video-link" href="https://youtu.be/zV9nXoHwmuQ?si=NOsZ1hVoUuLLjvl1" target="_blank">
   <img class="video-thumbnail" src="https://img.youtube.com/vi/zV9nXoHwmuQ/hqdefault.jpg" alt="Video 2">
-  <div class="video-title">Custom Animations</div>
+  <div class="video-title">Animations</div>
 </a>
 
 <a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
   <img class="video-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
-  <div class="video-title">Random Password</div>
+  <div class="video-title">Random Pass</div>
 </a>
 </div>
 
