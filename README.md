@@ -104,20 +104,20 @@
 </div>
 
 <div class="video-section">
-  <a class="video-link" href="https://youtu.be/811A6ycI0SQ?si=SSuA9XV-ZTXgjmgn" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/811A6ycI0SQ/hqdefault.jpg" alt="Video 1">
-    <div class="video-title">Break Blocks</div>
-  </a>
+  <a class="video-link" href="https://youtu.be/CqiRcReBlj0?si=ttx3INx9ud9Nk0PS" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
+  <div class="video-title">Pointing Arrow</div>
+</a>
 
-  <a class="video-link" href="https://youtu.be/C9HkfSy-iDI" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/C9HkfSy-iDI/hqdefault.jpg" alt="Video 2">
-    <div class="video-title">2D Camera</div>
-  </a>
+<a class="video-link" href="https://youtu.be/zV9nXoHwmuQ?si=NOsZ1hVoUuLLjvl1" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/zV9nXoHwmuQ/hqdefault.jpg" alt="Video 2">
+  <div class="video-title">Custom Animations</div>
+</a>
 
-  <a class="video-link" href="https://youtu.be/ik5kmfaoCbw?si=AQCklWg7zf-XcCDX" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/ik5kmfaoCbw/hqdefault.jpg" alt="Video 3">
-    <div class="video-title">Spin Wheel</div>
-  </a>
+<a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
+  <div class="video-title">Random Password</div>
+</a>
 </div>
 
 <div class="bottom-section">
