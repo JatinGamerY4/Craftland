@@ -11,14 +11,14 @@
     }
 
     .heading {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
       color: #1976d2;
       margin-bottom: 10px;
     }
 
     .subheading {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: bold;
       color: #1976d2;
       margin-bottom: 20px;
@@ -74,7 +74,7 @@
 
     .video-title {
       padding: 10px;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
     }
 
@@ -106,7 +106,7 @@
 </head>
 <body>
 
-<div class="heading"></div>
+<div class="heading">Craftland</div>
 <div class="subheading">Main Page</div>
 
 <div class="button-row">
@@ -160,7 +160,7 @@
   // Filter out shorts and live streams
   const longVideos = videos.filter(video => {
     const duration = getVideoDuration(video.url);
-    return duration > 60; // 1 minutes
+    return duration > 60; // 1 minute
   });
 
   // Select a random video
