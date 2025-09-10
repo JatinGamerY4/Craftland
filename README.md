@@ -51,8 +51,7 @@
     }
 
     .video-link {
-      display: flex;
-      align-items: center;
+      display: block;
       text-decoration: none;
       color: #000;
       border: 1px solid #ccc;
@@ -60,6 +59,7 @@
       overflow: hidden;
       background-color: #fff;
       transition: box-shadow 0.3s;
+      width: 320px;
     }
 
     .video-link:hover {
@@ -67,14 +67,15 @@
     }
 
     .video-thumbnail {
-      width: 160px;
-      height: 90px;
+      width: 100%;
+      height: 180px;
       object-fit: cover;
+      display: block;
     }
 
     .video-title {
       padding: 10px;
-      font-size: 18px;
+      font-size: 20px; /* slightly bigger */
       font-weight: bold;
     }
 
@@ -83,12 +84,6 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
-    }
-
-    .random-video img {
-      width: 320px;
-      height: 180px;
-      object-fit: cover;
     }
 
     .bottom-section {
@@ -145,7 +140,6 @@
 </div>
 
 <script>
-  // Video data
   const videos = [
     { url: 'https://youtu.be/CqiRcReBlj0', thumbnail: 'https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg', title: 'Point Arrow' },
     { url: 'https://youtu.be/o9V2s5r7Wx4', thumbnail: 'https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg', title: 'Ai NPC' },
@@ -157,36 +151,55 @@
     { url: 'https://youtu.be/MeazvgyvoSY', thumbnail: 'https://img.youtube.com/vi/MeazvgyvoSY/hqdefault.jpg', title: 'Learning Script' }
   ];
 
-  // Filter out shorts and live streams
-  const longVideos = videos.filter(video => {
-    const duration = getVideoDuration(video.url);
-    return duration > 60; // 1 minute
+  const container = document.getElementById('random-video-container');
+
+  // Load counts from localStorage
+  let videoCounts = JSON.parse(localStorage.getItem('videoCounts')) || videos.map(v => 0);
+
+  // Weighted chance calculation
+  let totalWeight = 0;
+  let weights = videos.map((v, i) => {
+    let weight = 100 - videoCounts[i] * 25;
+    if (weight < 5) weight = 5;
+    totalWeight += weight;
+    return weight;
   });
 
-  // Select a random video
-  const randomVideo = longVideos[Math.floor(Math.random() * longVideos.length)];
-
-  // Display the random video
-  const randomVideoContainer = document.getElementById('random-video-container');
-  const randomVideoElement = document.createElement('a');
-  randomVideoElement.href = randomVideo.url;
-  randomVideoElement.target = '_blank';
-  randomVideoElement.className = 'video-link';
-
-  const randomVideoThumbnail = document.createElement('img');
-  randomVideoThumbnail.src = randomVideo.thumbnail;
-  randomVideoThumbnail.alt = randomVideo.title;
-  randomVideoThumbnail.className = 'video-thumbnail';
-
-  randomVideoElement.appendChild(randomVideoThumbnail);
-  randomVideoContainer.appendChild(randomVideoElement);
-
-  // Function to get video duration (in seconds)
-  function getVideoDuration(url) {
-    // For the sake of this example, we'll return a fixed duration
-    // In a real implementation, you would fetch the video metadata to get the actual duration
-    return 1200; // 20 minutes
+  // Weighted random selection
+  let rand = Math.random() * totalWeight;
+  let selectedIndex = 0;
+  for (let i = 0; i < weights.length; i++) {
+    if (rand < weights[i]) {
+      selectedIndex = i;
+      break;
+    }
+    rand -= weights[i];
   }
+
+  // Show video
+  const video = videos[selectedIndex];
+  const videoElement = document.createElement('a');
+  videoElement.href = video.url;
+  videoElement.target = '_blank';
+  videoElement.className = 'video-link';
+
+  const videoThumbnail = document.createElement('img');
+  videoThumbnail.src = video.thumbnail;
+  videoThumbnail.alt = video.title;
+  videoThumbnail.className = 'video-thumbnail';
+
+  videoElement.appendChild(videoThumbnail);
+  container.appendChild(videoElement);
+
+  // Update counts to prevent repetition
+  videoCounts[selectedIndex] = 3; // high count so low chance next reload
+  for (let i = 0; i < videoCounts.length; i++) {
+    if (i !== selectedIndex && videoCounts[i] > 0) {
+      videoCounts[i]--;
+    }
+  }
+
+  localStorage.setItem('videoCounts', JSON.stringify(videoCounts));
 </script>
 
 </body>
