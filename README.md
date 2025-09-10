@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Craftland</title>
+  <title></title>
   <style>
     body {
       margin: 0;
@@ -59,15 +59,23 @@
       overflow: hidden;
       background-color: #fff;
       transition: box-shadow 0.3s;
-      width: 320px;
     }
 
     .video-link:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* Fixed link thumbnails size */
+    .fixed-thumbnail {
+      width: 320px;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Random video thumbnails size */
     .video-thumbnail {
-      width: 100%;
+      width: 320px;
       height: 180px;
       object-fit: cover;
       display: block;
@@ -75,7 +83,7 @@
 
     .video-title {
       padding: 10px;
-      font-size: 20px; /* slightly bigger */
+      font-size: 20px; 
       font-weight: bold;
     }
 
@@ -111,21 +119,23 @@
 </div>
 
 <div class="video-section">
+  <!-- Fixed links with original size -->
   <a class="video-link" href="https://youtu.be/CqiRcReBlj0?si=ttx3INx9ud9Nk0PS" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
+    <img class="fixed-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
     <div class="video-title">Point Arrow</div>
   </a>
 
   <a class="video-link" href="https://youtu.be/o9V2s5r7Wx4?si=dvTZRrZFbJnkqS58" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg" alt="Video 2">
+    <img class="fixed-thumbnail" src="https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg" alt="Video 2">
     <div class="video-title">Ai NPC</div>
   </a>
 
   <a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
+    <img class="fixed-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
     <div class="video-title">Random Pass</div>
   </a>
 
+  <!-- Random Video Section -->
   <div class="random-video">
     <div class="video-title">RANDOM VIDEO</div>
     <div id="random-video-container"></div>
@@ -141,6 +151,7 @@
 
 <script>
   const videos = [
+    // All JATIN GAMER Y4 videos
     { url: 'https://youtu.be/CqiRcReBlj0', thumbnail: 'https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg', title: 'Point Arrow' },
     { url: 'https://youtu.be/o9V2s5r7Wx4', thumbnail: 'https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg', title: 'Ai NPC' },
     { url: 'https://youtu.be/h0ttgy1eW_M', thumbnail: 'https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg', title: 'Random Pass' },
