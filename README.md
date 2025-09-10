@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -102,8 +103,21 @@
   <button class="top-button" onclick="location.href='assets.html'">Assets</button>
 </div>
 
-<div class="video-section" id="video-section">
-  <!-- Videos will be inserted here by JavaScript -->
+<div class="video-section">
+  <a class="video-link" href="https://youtu.be/CqiRcReBlj0?si=ttx3INx9ud9Nk0PS" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
+  <div class="video-title">Point Arrow</div>
+</a>
+
+<a class="video-link" href="https://youtu.be/o9V2s5r7Wx4?si=dvTZRrZFbJnkqS58" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg" alt="Video 2">
+  <div class="video-title">Ai NPC</div>
+</a>
+
+<a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
+  <div class="video-title">Random Pass</div>
+</a>
 </div>
 
 <div class="bottom-section">
@@ -112,56 +126,6 @@
   <button class="bottom-button" onclick="location.href='https://www.instagram.com/jatingamery4'">Instagram</button>
   <div class="email-text">Email: jatingamery411@gmail.com</div>
 </div>
-
-<script>
-  // Array of video objects with URL, thumbnail, and title
-  const videos = [
-    { url: 'https://youtu.be/CqiRcReBlj0', thumbnail: 'https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg', title: 'How to Make a Pointing Arrow in Craftland' },
-    { url: 'https://youtu.be/o9V2s5r7Wx4', thumbnail: 'https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg', title: 'Make AI NPC In Craftland' },
-    { url: 'https://youtu.be/h0ttgy1eW_M', thumbnail: 'https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg', title: 'Random Pass in Craftland' },
-    { url: 'https://youtu.be/BXfGjZ8QOv8', thumbnail: 'https://img.youtube.com/vi/BXfGjZ8QOv8/hqdefault.jpg', title: 'Transform Into Pet in Craftland' },
-    { url: 'https://youtu.be/w9LwYS8II0c', thumbnail: 'https://img.youtube.com/vi/w9LwYS8II0c/hqdefault.jpg', title: 'GTA-V Craftland Map Update' },
-    { url: 'https://youtu.be/Y7_Pdjc9ARE', thumbnail: 'https://img.youtube.com/vi/Y7_Pdjc9ARE/hqdefault.jpg', title: 'Make Custom Banner in Craftland' },
-    { url: 'https://youtu.be/0We-XFLkI4M', thumbnail: 'https://img.youtube.com/vi/0We-XFLkI4M/hqdefault.jpg', title: 'I Made Calculator in Craftland' },
-    { url: 'https://youtu.be/MeazvgyvoSY', thumbnail: 'https://img.youtube.com/vi/MeazvgyvoSY/hqdefault.jpg', title: 'How I Started Learning Script' }
-  ];
-
-  // Function to get a random video
-  function getRandomVideo() {
-    const randomIndex = Math.floor(Math.random() * videos.length);
-    return videos[randomIndex];
-  }
-
-  // Function to update the video section with random videos
-  function updateVideos() {
-    const videoSection = document.getElementById('video-section');
-    videoSection.innerHTML = ''; // Clear existing videos
-
-    for (let i = 0; i < 3; i++) {
-      const video = getRandomVideo();
-      const videoLink = document.createElement('a');
-      videoLink.classList.add('video-link');
-      videoLink.href = video.url;
-      videoLink.target = '_blank';
-
-      const thumbnail = document.createElement('img');
-      thumbnail.classList.add('video-thumbnail');
-      thumbnail.src = video.thumbnail;
-      thumbnail.alt = video.title;
-
-      const title = document.createElement('div');
-      title.classList.add('video-title');
-      title.textContent = video.title;
-
-      videoLink.appendChild(thumbnail);
-      videoLink.appendChild(title);
-      videoSection.appendChild(videoLink);
-    }
-  }
-
-  // Update videos on page load
-  window.onload = updateVideos;
-</script>
 
 </body>
 </html>
