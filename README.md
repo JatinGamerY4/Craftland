@@ -109,9 +109,9 @@
   <div class="video-title">Point Arrow</div>
 </a>
 
-<a class="video-link" href="https://youtu.be/zV9nXoHwmuQ?si=NOsZ1hVoUuLLjvl1" target="_blank">
-  <img class="video-thumbnail" src="https://img.youtube.com/vi/zV9nXoHwmuQ/hqdefault.jpg" alt="Video 2">
-  <div class="video-title">Animations</div>
+<a class="video-link" href="https://youtu.be/o9V2s5r7Wx4?si=dvTZRrZFbJnkqS58" target="_blank">
+  <img class="video-thumbnail" src="https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg" alt="Video 2">
+  <div class="video-title">Ai NPC</div>
 </a>
 
 <a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
