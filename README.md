@@ -144,13 +144,5 @@
 
   </div>
 
-  <!-- INSTAGRAM BUTTON -->
-  <div class="bottom-section">
-    <button class="bottom-button"
-      onclick="window.open('https://www.instagram.com/jatingamery4?igsh=MW1mN3YwcmNkNGpwcg==','_blank')">
-      Follow on Instagram
-    </button>
-  </div>
-
 </body>
 </html>
