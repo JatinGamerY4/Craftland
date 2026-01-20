@@ -106,7 +106,6 @@
     </a>
 
     <a class="video-link" href="https://youtu.be/SYV8RvdVBnI" target="_blank">
-     ied   );
       <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
       <div class="video-title">Video 3</div>
     </a>
