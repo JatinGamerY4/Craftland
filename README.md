@@ -101,23 +101,23 @@
   <button class="top-button" onclick="location.href='maps.html'">Maps</button>
   <button class="top-button" onclick="location.href='https://0xme.github.io/ItemID2/?mode=2'">Codes</button>
   <button class="top-button" onclick="location.href='assets.html'">Assets</button>
-</div>
-
 <div class="video-section">
-  <a class="video-link" href="https://youtu.be/CqiRcReBlj0?si=ttx3INx9ud9Nk0PS" target="_blank">
-  <img class="video-thumbnail" src="https://img.youtube.com/vi/CqiRcReBlj0/hqdefault.jpg" alt="Video 1">
-  <div class="video-title">Point Arrow</div>
-</a>
 
-<a class="video-link" href="https://youtu.be/o9V2s5r7Wx4?si=dvTZRrZFbJnkqS58" target="_blank">
-  <img class="video-thumbnail" src="https://img.youtube.com/vi/o9V2s5r7Wx4/hqdefault.jpg" alt="Video 2">
-  <div class="video-title">AI NPC</div>
-</a>
+  <a class="video-link" href="https://youtu.be/CnAU9C-dseg?si=gBXveFG--qnoZs1S" target="_blank">
+    <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg" alt="Video 1">
+    <div class="video-title">Video 1</div>
+  </a>
 
-<a class="video-link" href="https://youtu.be/h0ttgy1eW_M?si=A53IgLrFSVsmZXY7" target="_blank">
-  <img class="video-thumbnail" src="https://img.youtube.com/vi/h0ttgy1eW_M/hqdefault.jpg" alt="Video 3">
-  <div class="video-title">Random Pass</div>
-</a>
+  <a class="video-link" href="https://youtu.be/QfLS0kn8MWw?si=x3CkcBc3PPIYOGEF" target="_blank">
+    <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg" alt="Video 2">
+    <div class="video-title">Video 2</div>
+  </a>
+
+  <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
+    <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg" alt="Video 3">
+    <div class="video-title">Video 3</div>
+  </a>
+
 </div>
 
 <div class="bottom-section">
