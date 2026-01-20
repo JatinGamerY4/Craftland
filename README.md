@@ -97,17 +97,17 @@
 
     <a class="video-link" href="https://youtu.be/CnAU9C-dseg" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg">
-      <div class="video-title">Video 1</div>
+      <div class="video-title">Heart Lives</div>
     </a>
 
     <a class="video-link" href="https://youtu.be/QfLS0kn8MWw" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg">
-      <div class="video-title">Video 2</div>
+      <div class="video-title">Add Missions</div>
     </a>
 
     <a class="video-link" href="https://youtu.be/SYV8RvdVBnI" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
-      <div class="video-title">Video 3</div>
+      <div class="video-title">Timer Script</div>
     </a>
 
   </div>
