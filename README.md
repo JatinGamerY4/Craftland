@@ -72,6 +72,13 @@
       flex-direction: column;
       gap: 15px;
       margin-top: 20px;
+      align-items: center;
+    }
+
+    .email-text {
+      font-weight: bold;
+      text-align: center;
+      color: #333;
     }
   </style>
 </head>
@@ -99,6 +106,7 @@
     </a>
 
     <a class="video-link" href="https://youtu.be/SYV8RvdVBnI" target="_blank">
+     ied   );
       <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
       <div class="video-title">Video 3</div>
     </a>
@@ -115,6 +123,10 @@
       onclick="window.open('https://discord.gg/official-craftland-creators-india-1338827872781205556','_blank')">
       Join Discord
     </button>
+
+    <div class="email-text">
+      E-mail ID: jatingamery411@gmail.com
+    </div>
   </div>
 
 </body>
