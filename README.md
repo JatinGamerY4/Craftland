@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -92,6 +91,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <div class="heading"></div>
@@ -101,30 +101,28 @@
   <button class="top-button" onclick="location.href='maps.html'">Maps</button>
   <button class="top-button" onclick="location.href='https://0xme.github.io/ItemID2/?mode=2'">Codes</button>
   <button class="top-button" onclick="location.href='assets.html'">Assets</button>
+</div>
+
 <div class="video-section">
 
+  <!-- Video 1 -->
   <a class="video-link" href="https://youtu.be/CnAU9C-dseg?si=gBXveFG--qnoZs1S" target="_blank">
     <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg" alt="Video 1">
     <div class="video-title">Video 1</div>
   </a>
 
+  <!-- Video 2 -->
   <a class="video-link" href="https://youtu.be/QfLS0kn8MWw?si=x3CkcBc3PPIYOGEF" target="_blank">
     <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg" alt="Video 2">
     <div class="video-title">Video 2</div>
   </a>
 
+  <!-- Video 3 -->
   <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
     <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg" alt="Video 3">
     <div class="video-title">Video 3</div>
   </a>
 
-</div>
-
-<div class="bottom-section">
-  <button class="bottom-button" onclick="location.href='https://youtube.com/@jatingamery4?si=HIaEeaxK8dG6gf0U'">Watch More</button>
-  <button class="bottom-button" onclick="location.href='https://discord.gg/THYBW9ER'">Discord Server</button>
-  <button class="bottom-button" onclick="location.href='https://www.instagram.com/jatingamery4'">Instagram</button>
-  <div class="email-text">Email: jatingamery411@gmail.com</div>
 </div>
 
 </body>
