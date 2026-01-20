@@ -2,6 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Craftland</title>
+
   <style>
     body {
       margin: 0;
@@ -84,46 +85,47 @@
       gap: 15px;
       margin-top: 20px;
     }
-
-    .email-text {
-      font-weight: bold;
-      text-align: center;
-    }
   </style>
 </head>
 
 <body>
 
-<div class="heading"></div>
-<div class="subheading">Main Page</div>
+  <div class="heading"></div>
+  <div class="subheading">Main Page</div>
 
-<div class="button-row">
-  <button class="top-button" onclick="location.href='maps.html'">Maps</button>
-  <button class="top-button" onclick="location.href='https://0xme.github.io/ItemID2/?mode=2'">Codes</button>
-  <button class="top-button" onclick="location.href='assets.html'">Assets</button>
-</div>
+  <div class="button-row">
+    <button class="top-button" onclick="location.href='maps.html'">Maps</button>
+    <button class="top-button" onclick="location.href='https://0xme.github.io/ItemID2/?mode=2'">Codes</button>
+    <button class="top-button" onclick="location.href='assets.html'">Assets</button>
+  </div>
 
-<div class="video-section">
+  <!-- VIDEOS -->
+  <div class="video-section">
 
-  <!-- Video 1 -->
-  <a class="video-link" href="https://youtu.be/CnAU9C-dseg?si=gBXveFG--qnoZs1S" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg" alt="Video 1">
-    <div class="video-title">Video 1</div>
-  </a>
+    <a class="video-link" href="https://youtu.be/CnAU9C-dseg?si=gBXveFG--qnoZs1S" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg">
+      <div class="video-title">Video 1</div>
+    </a>
 
-  <!-- Video 2 -->
-  <a class="video-link" href="https://youtu.be/QfLS0kn8MWw?si=x3CkcBc3PPIYOGEF" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg" alt="Video 2">
-    <div class="video-title">Video 2</div>
-  </a>
+    <a class="video-link" href="https://youtu.be/QfLS0kn8MWw?si=x3CkcBc3PPIYOGEF" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg">
+      <div class="video-title">Video 2</div>
+    </a>
 
-  <!-- Video 3 -->
-  <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
-    <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg" alt="Video 3">
-    <div class="video-title">Video 3</div>
-  </a>
+    <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
+      <div class="video-title">Video 3</div>
+    </a>
 
-</div>
+  </div>
+
+  <!-- INSTAGRAM BUTTON -->
+  <div class="bottom-section">
+    <button class="bottom-button"
+      onclick="window.open('https://www.instagram.com/jatingamery4?igsh=MW1mN3YwcmNkNGpwcg==','_blank')">
+      Follow on Instagram
+    </button>
+  </div>
 
 </body>
 </html>
