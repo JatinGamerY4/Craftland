@@ -119,6 +119,31 @@
 
   </div>
 
+  <!-- SOCIAL BUTTONS -->
+  <div class="bottom-section">
+    <button class="bottom-button"
+      onclick="window.open('https://www.instagram.com/jatingamery4?igsh=MW1mN3YwcmNkNGpwcg==','_blank')">
+      Follow on Instagram
+    </button>
+
+    <button class="bottom-button"
+      onclick="window.open('https://discord.gg/official-craftland-creators-india-1338827872781205556','_blank')">
+      Join Discord
+    </button>
+  </div>
+
+</body>
+</html>      <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg">
+      <div class="video-title">Video 2</div>
+    </a>
+
+    <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
+      <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
+      <div class="video-title">Video 3</div>
+    </a>
+
+  </div>
+
   <!-- INSTAGRAM BUTTON -->
   <div class="bottom-section">
     <button class="bottom-button"
