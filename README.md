@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,13 +12,6 @@
       font-family: Arial, sans-serif;
     }
 
-    .heading {
-      font-size: 32px;
-      font-weight: bold;
-      color: #1976d2;
-      margin-bottom: 10px;
-    }
-
     .subheading {
       font-size: 28px;
       font-weight: bold;
@@ -29,7 +23,6 @@
       display: flex;
       gap: 20px;
       margin-bottom: 20px;
-      flex-wrap: nowrap;
     }
 
     .top-button, .bottom-button {
@@ -60,11 +53,6 @@
       border-radius: 8px;
       overflow: hidden;
       background-color: #fff;
-      transition: box-shadow 0.3s;
-    }
-
-    .video-link:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .video-thumbnail {
@@ -90,7 +78,6 @@
 
 <body>
 
-  <div class="heading"></div>
   <div class="subheading">Main Page</div>
 
   <div class="button-row">
@@ -99,30 +86,28 @@
     <button class="top-button" onclick="location.href='assets.html'">Assets</button>
   </div>
 
-  <!-- VIDEOS -->
   <div class="video-section">
 
-    <a class="video-link" href="https://youtu.be/CnAU9C-dseg?si=gBXveFG--qnoZs1S" target="_blank">
+    <a class="video-link" href="https://youtu.be/CnAU9C-dseg" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/CnAU9C-dseg/hqdefault.jpg">
       <div class="video-title">Video 1</div>
     </a>
 
-    <a class="video-link" href="https://youtu.be/QfLS0kn8MWw?si=x3CkcBc3PPIYOGEF" target="_blank">
+    <a class="video-link" href="https://youtu.be/QfLS0kn8MWw" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg">
       <div class="video-title">Video 2</div>
     </a>
 
-    <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
+    <a class="video-link" href="https://youtu.be/SYV8RvdVBnI" target="_blank">
       <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
       <div class="video-title">Video 3</div>
     </a>
 
   </div>
 
-  <!-- SOCIAL BUTTONS -->
   <div class="bottom-section">
     <button class="bottom-button"
-      onclick="window.open('https://www.instagram.com/jatingamery4?igsh=MW1mN3YwcmNkNGpwcg==','_blank')">
+      onclick="window.open('https://www.instagram.com/jatingamery4','_blank')">
       Follow on Instagram
     </button>
 
@@ -130,18 +115,6 @@
       onclick="window.open('https://discord.gg/official-craftland-creators-india-1338827872781205556','_blank')">
       Join Discord
     </button>
-  </div>
-
-</body>
-</html>      <img class="video-thumbnail" src="https://img.youtube.com/vi/QfLS0kn8MWw/hqdefault.jpg">
-      <div class="video-title">Video 2</div>
-    </a>
-
-    <a class="video-link" href="https://youtu.be/SYV8RvdVBnI?si=nKhGtbJN3IenR3ci" target="_blank">
-      <img class="video-thumbnail" src="https://img.youtube.com/vi/SYV8RvdVBnI/hqdefault.jpg">
-      <div class="video-title">Video 3</div>
-    </a>
-
   </div>
 
 </body>
