@@ -2,419 +2,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b18">
-  <title>JATINGAMERY4 | Map Codes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map Codes | JATINGAMERY4</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    :root {
-      --bg: #080b18;
-      --cyan: #00eaff;
-      --purple: #9b5cff;
-      --text: #f4f7ff;
-      --muted: #9ca8c2;
-    }
+:root {
+    --bg: #080b18;
+    --card: rgba(18, 24, 45, 0.82);
+    --cyan: #00eaff;
+    --purple: #9b5cff;
+    --text: #ffffff;
+    --muted: #a6aec5;
+}
 
-    body {
-      min-height: 100vh;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(ellipse at 15% 15%, rgba(0,234,255,.12), transparent 35%),
-        radial-gradient(ellipse at 85% 35%, rgba(155,92,255,.13), transparent 35%),
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(0,234,255,0.10), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(155,92,255,0.12), transparent 30%),
         var(--bg);
-    }
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-      background-size: 45px 45px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
-    }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 45px 45px;
+    pointer-events: none;
+    z-index: -1;
+}
 
-    .cursor-glow {
-      position: fixed;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: rgba(0,234,255,.07);
-      filter: blur(75px);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
+nav {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(8,11,24,0.75);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-    /* NAVIGATION */
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: white;
+}
 
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--cyan);
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 45px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(0,234,255,0.3);
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    background: rgba(0,234,255,0.06);
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(32px, 6vw, 55px);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.codes-container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.code-card {
+    padding: 23px;
+    border-radius: 15px;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.code-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,234,255,0.45);
+    box-shadow: 0 8px 30px rgba(0,234,255,0.08);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.card-top h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.card-number {
+    font-size: 10px;
+    color: var(--cyan);
+    background: rgba(0,234,255,0.08);
+    padding: 6px 9px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.code-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.code-text {
+    color: #d5e7f2;
+    font-size: 12px;
+    font-weight: 600;
+    word-break: break-all;
+    line-height: 1.5;
+}
+
+.copy-btn {
+    flex-shrink: 0;
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, var(--cyan), #568aff);
+    color: #06101c;
+    padding: 9px 13px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,234,255,0.3);
+}
+
+.copy-btn.copied {
+    background: #43e99b;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 15px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+@media(max-width: 650px) {
     nav {
-      width: min(1150px, 92%);
-      margin: 25px auto 0;
-      padding: 13px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      background: rgba(17,22,42,.72);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 16px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 10px 40px rgba(0,0,0,.2);
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 17px;
     }
 
-    .nav-logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, var(--cyan), #fff, var(--purple));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      white-space: nowrap;
+    .logo {
+        font-size: 17px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
+        gap: 19px;
     }
 
     .nav-links a {
-      color: #c5cde0;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .7px;
-      padding: 11px 15px;
-      border-radius: 9px;
-      transition: .25s;
+        font-size: 10px;
     }
-
-    .nav-links a:hover {
-      color: white;
-      background: linear-gradient(110deg, rgba(0,234,255,.18), rgba(155,92,255,.2));
-      box-shadow: inset 0 0 0 1px rgba(0,234,255,.18);
-    }
-
-    /* HEADER */
 
     .hero {
-      width: min(900px, 92%);
-      margin: 85px auto 45px;
-      text-align: center;
+        padding: 55px 15px 35px;
     }
-
-    .hero-tag {
-      display: inline-block;
-      padding: 9px 17px;
-      border: 1px solid rgba(0,234,255,.3);
-      border-radius: 50px;
-      color: var(--cyan);
-      background: rgba(0,234,255,.06);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(30px, 6vw, 55px);
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -1px;
-      background: linear-gradient(100deg, #fff 10%, var(--cyan) 48%, var(--purple) 90%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter: drop-shadow(0 0 25px rgba(0,234,255,.13));
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 18px auto 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    /* CODE LIST */
 
     .codes-container {
-      width: min(850px, 92%);
-      margin: 0 auto 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .code-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 20px;
-      background: rgba(18,24,45,.78);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.17);
-      transition: .25s;
+        padding: 19px;
     }
 
-    .code-card:hover {
-      border-color: rgba(0,234,255,.4);
-      transform: translateY(-3px);
+    .code-text {
+        font-size: 11px;
     }
-
-    .code-info {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .code-name {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: .7px;
-      margin-bottom: 10px;
-      color: white;
-    }
-
-    .code-value {
-      color: #aebbd5;
-      font-family: monospace;
-      font-size: 12px;
-      line-height: 1.7;
-      overflow-wrap: anywhere;
-      user-select: text;
-    }
-
-    .copy-btn {
-      flex-shrink: 0;
-      min-width: 95px;
-      padding: 11px 15px;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .5px;
-      cursor: pointer;
-      background: linear-gradient(110deg, #00bcd4, #7555ff);
-      transition: .25s;
-    }
-
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(0,234,255,.2);
-    }
-
-    .copy-btn.copied {
-      background: linear-gradient(110deg, #119b67, #16bd83);
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 25px 15px;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,.07);
-      color: #78849f;
-      font-size: 11px;
-      letter-spacing: .5px;
-    }
-
-    footer span {
-      color: var(--cyan);
-      font-weight: 800;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 650px) {
-      nav {
-        flex-direction: column;
-        padding: 16px 10px;
-      }
-
-      .nav-links {
-        width: 100%;
-        gap: 3px;
-      }
-
-      .nav-links a {
-        padding: 10px 11px;
-        font-size: 10px;
-      }
-
-      .hero {
-        margin-top: 65px;
-      }
-
-      .hero p {
-        font-size: 12px;
-      }
-
-      .code-card {
-        padding: 15px;
-        gap: 10px;
-      }
-
-      .code-name {
-        font-size: 12px;
-      }
-
-      .code-value {
-        font-size: 10px;
-      }
-
-      .copy-btn {
-        min-width: 75px;
-        padding: 10px 9px;
-        font-size: 10px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .code-card {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .copy-btn {
-        width: 100%;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-logo">JATINGAMERY4</div>
+<nav>
+    <div class="logo">JATIN<span>GAMERY4</span></div>
 
     <div class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="maps.html">MAPS</a>
-      <a href="https://0xme.github.io/ItemID2/?mode=2&page=1" target="_blank">CODES</a>
-      <a href="assets.html">ASSETS</a>
+        <a href="index.html">HOME</a>
+        <a href="maps.html">MAPS</a>
+        <a href="https://0xme.github.io/ItemID2/?mode=2&page=1">CODES</a>
+        <a href="assets.html">ASSETS</a>
     </div>
-  </nav>
+</nav>
 
-  <!-- HEADER -->
-  <section class="hero">
-    <div class="hero-tag">CRAFTLAND MAP COLLECTION</div>
+<section class="hero">
+    <div class="tag">CRAFTLAND COLLECTION</div>
+    <h1>MAP <span>CODES</span></h1>
+    <p>Explore my Craftland maps and copy their codes to play with your friends.</p>
+</section>
 
-    <h1>MAP CODES</h1>
-
-    <p>
-      Find your favourite Craftland map code below.
-      Simply click the COPY button and use the code in Free Fire.
-    </p>
-  </section>
-
-  <!-- MAP CODES -->
-  <section class="codes-container">
+<main class="codes-container">
 
     <div class="code-card">
-      <div class="code-info">
-        <div class="code-name">A HORROR ESCAPE</div>
-        <div class="code-value">#FREEFIRECE5935BC7F2994C1CDB225F0CA7A62105676</div>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+        <div class="card-top">
+            <h3>DEAD CITIES</h3>
+            <span class="card-number">MAP 01</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#Q24V7O</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
     </div>
 
     <div class="code-card">
-      <div class="code-info">
-        <div class="code-name">GTA-V</div>
-        <div class="code-value">#FREEFIRE35E6F44683F4249258DA79F5E43EA70F5676</div>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+        <div class="card-top">
+            <h3>HAMOOD HABIBI TOWER</h3>
+            <span class="card-number">MAP 02</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#6C00A6</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
     </div>
 
     <div class="code-card">
-      <div class="code-info">
-        <div class="code-name">PRACTICE</div>
-        <div class="code-value">#FREEFIREF8D6C651B98E56EC79FD95F8F959AFFC5676</div>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+        <div class="card-top">
+            <h3>CAR RACING 3D</h3>
+            <span class="card-number">MAP 03</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#X01J46</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
     </div>
 
     <div class="code-card">
-      <div class="code-info">
-        <div class="code-name">1V1</div>
-        <div class="code-value">#FREEFIREFE0167061E98A805EA00D63466F3530C5676</div>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+        <div class="card-top">
+            <h3>STEAL A BRAINROT</h3>
+            <span class="card-number">MAP 04</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#Q32Q16</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
     </div>
 
-  </section>
+    <div class="code-card">
+        <div class="card-top">
+            <h3>COSMO SOCIAL WORLDS</h3>
+            <span class="card-number">MAP 05</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#X26O06</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 <span>JATINGAMERY4</span> — All Rights Reserved.
-  </footer>
+    <div class="code-card">
+        <div class="card-top">
+            <h3>LOGO QUIZ</h3>
+            <span class="card-number">MAP 06</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIRE3638C037E838F4671DEB117011893FD95676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
 
-  <script>
-    // Cursor glow
-    const cursorGlow = document.getElementById("cursorGlow");
+    <div class="code-card">
+        <div class="card-top">
+            <h3>SUBWAY SURFER</h3>
+            <span class="card-number">MAP 07</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIRE3FA17F347B48A18B39C7DAEBDAB2ED685676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
 
-    if (window.matchMedia("(pointer: fine)").matches) {
-      document.addEventListener("mousemove", (e) => {
-        cursorGlow.style.left = e.clientX + "px";
-        cursorGlow.style.top = e.clientY + "px";
-      });
-    } else {
-      cursorGlow.style.display = "none";
-    }
+    <div class="code-card">
+        <div class="card-top">
+            <h3>FOREST TRAINING GROUND</h3>
+            <span class="card-number">MAP 08</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIREFDDFEA34C6AEAB144C2C40F504AB021F5676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
 
-    // Copy map code
-    async function copyCode(button) {
-      const code = button.parentElement.querySelector(".code-value").textContent.trim();
+    <div class="code-card">
+        <div class="card-top">
+            <h3>A HORROR ESCAPE</h3>
+            <span class="card-number">MAP 09</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIRECE5935BC7F2994C1CDB225F0CA7A62105676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
 
-      try {
+    <div class="code-card">
+        <div class="card-top">
+            <h3>GTA-V</h3>
+            <span class="card-number">MAP 10</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIRE35E6F44683F4249258DA79F5E43EA70F5676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
+
+    <div class="code-card">
+        <div class="card-top">
+            <h3>PRACTICE</h3>
+            <span class="card-number">MAP 11</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIREF8D6C651B98E56EC79FD95F8F959AFFC5676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
+
+    <div class="code-card">
+        <div class="card-top">
+            <h3>1V1 SPECIAL MAP</h3>
+            <span class="card-number">MAP 12</span>
+        </div>
+        <div class="code-box">
+            <span class="code-text">#FREEFIREFE0167061E98A805EA00D63466F3530C5676</span>
+            <button class="copy-btn" onclick="copyCode(this)">COPY</button>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    Made with ❤️ by <span>JATINGAMERY4</span>
+</footer>
+
+<script>
+async function copyCode(button) {
+    const code = button.parentElement.querySelector('.code-text').textContent.trim();
+
+    try {
         await navigator.clipboard.writeText(code);
-      } catch (error) {
-        const textarea = document.createElement("textarea");
-        textarea.value = code;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-      }
-
-      const originalText = button.textContent;
-      button.textContent = "COPIED ✓";
-      button.classList.add("copied");
-
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.classList.remove("copied");
-      }, 1800);
+    } catch (error) {
+        const textArea = document.createElement('textarea');
+        textArea.value = code;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
     }
-  </script>
+
+    const originalText = button.textContent;
+    button.textContent = 'COPIED!';
+    button.classList.add('copied');
+
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('copied');
+    }, 1500);
+}
+</script>
 
 </body>
 </html>
