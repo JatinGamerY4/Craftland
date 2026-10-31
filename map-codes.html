@@ -47,6 +47,32 @@ body::before {
     z-index: -1;
 }
 
+/* CURSOR GLOW */
+.cursor-glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0,234,255,0.10) 0%,
+        rgba(155,92,255,0.07) 35%,
+        transparent 70%
+    );
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    will-change: left, top;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cursor-glow {
+        opacity: 1;
+    }
+}
+
 nav {
     width: 100%;
     padding: 22px 7%;
@@ -95,6 +121,8 @@ nav {
 .hero {
     text-align: center;
     padding: 75px 20px 45px;
+    position: relative;
+    z-index: 1;
 }
 
 .tag {
@@ -136,6 +164,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
+    position: relative;
+    z-index: 1;
 }
 
 .code-card {
@@ -225,6 +255,8 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.07);
     color: var(--muted);
     font-size: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 footer span {
@@ -273,6 +305,8 @@ footer span {
 </head>
 
 <body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <nav>
     <div class="logo">JATIN<span>GAMERY4</span></div>
@@ -432,6 +466,15 @@ footer span {
 </footer>
 
 <script>
+// CURSOR GLOW FOLLOW EFFECT
+const cursorGlow = document.getElementById('cursorGlow');
+
+document.addEventListener('mousemove', (event) => {
+    cursorGlow.style.left = event.clientX + 'px';
+    cursorGlow.style.top = event.clientY + 'px';
+});
+
+// COPY MAP CODE
 async function copyCode(button) {
     const code = button.parentElement.querySelector('.code-text').textContent.trim();
 
