@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +6,15 @@
 <meta name="theme-color" content="#070914">
 <title>JATINGAMERY4 | Craftland Creator Hub</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<style>
 :root {
   --bg: #070914;
-  --panel: #101426;
   --cyan: #00eaff;
   --purple: #a855f7;
-  --blue: #4169ff;
   --text: #f4f7ff;
   --muted: #929bb5;
 }
@@ -37,8 +36,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
-
-/* Background */
 
 body::before {
   content: "";
@@ -63,7 +60,7 @@ body::after {
   background-size: 28px 28px;
 }
 
-/* Mouse glow */
+/* CURSOR GLOW */
 
 #cursor-glow {
   position: fixed;
@@ -77,11 +74,16 @@ body::after {
     #536dff12 40%,
     transparent 70%);
   transform: translate(-50%, -50%);
-  transition: width .2s, height .2s;
   display: none;
 }
 
-/* Navigation */
+@media (hover: hover) and (pointer: fine) {
+  #cursor-glow {
+    display: block;
+  }
+}
+
+/* NAVIGATION */
 
 .navbar {
   max-width: 1250px;
@@ -104,7 +106,6 @@ body::after {
   font-weight: 800;
   font-size: 17px;
   letter-spacing: 1px;
-  color: white;
 }
 
 .logo span {
@@ -138,7 +139,7 @@ body::after {
   transform: translateY(-2px);
 }
 
-/* Hero */
+/* HERO */
 
 .hero {
   max-width: 1100px;
@@ -191,7 +192,7 @@ body::after {
   box-shadow: 0 0 15px var(--cyan);
 }
 
-/* Social buttons */
+/* SOCIAL BUTTONS */
 
 .social-row {
   display: flex;
@@ -215,17 +216,14 @@ body::after {
 
 .instagram {
   background: linear-gradient(110deg, #833ab4, #fd1d1d, #fcb045);
-  box-shadow: 0 5px 25px #e1306c20;
 }
 
 .discord {
   background: linear-gradient(110deg, #4752c4, #7289ff);
-  box-shadow: 0 5px 25px #5865f230;
 }
 
 .email {
   background: linear-gradient(110deg, #075c82, #007f9d);
-  box-shadow: 0 5px 25px #00eaff20;
 }
 
 .social-btn:hover {
@@ -233,7 +231,7 @@ body::after {
   filter: brightness(1.2);
 }
 
-/* Video section */
+/* VIDEO SECTION */
 
 .content {
   max-width: 1100px;
@@ -265,184 +263,50 @@ body::after {
   letter-spacing: 1px;
 }
 
-.video-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.video-card {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  padding: 13px;
-  background: linear-gradient(110deg, #141b31, #101426);
-  border: 1px solid #ffffff12;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: .3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.video-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(var(--cyan), var(--purple));
-  opacity: .7;
-}
-
-.video-card:hover {
-  transform: translateX(6px);
-  border-color: #00eaff70;
-  box-shadow: 0 5px 30px #00eaff12, inset 0 0 25px #00eaff05;
-}
-
-.thumbnail-wrap {
-  position: relative;
-  flex-shrink: 0;
-  width: 190px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #202a40;
-}
-
-.thumbnail-wrap img {
+.playlist-shell {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .4s;
-}
-
-.video-card:hover img {
-  transform: scale(1.07);
-}
-
-.play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #00dfffdb;
-  color: #06121d;
-  font-size: 18px;
-  box-shadow: 0 0 25px #00eaff90;
-  transition: .3s;
-}
-
-.video-card:hover .play-icon {
-  transform: translate(-50%, -50%) scale(1.16);
-  background: white;
-}
-
-.video-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.video-number {
-  color: var(--cyan);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-bottom: 9px;
-}
-
-.video-title {
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.5;
-  color: #f5f7ff;
-}
-
-.video-subtitle {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 7px;
-}
-
-.watch-label {
-  color: var(--cyan);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
   padding: 12px;
-}
-
-/* Video Modal */
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  background: #02040deF;
-  backdrop-filter: blur(15px);
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.modal.active {
-  display: flex;
-}
-
-.modal-box {
-  width: min(900px, 100%);
-  background: #101426;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #101b35, #17102b);
   border: 1px solid #00eaff55;
-  border-radius: 16px;
+  box-shadow: 0 0 30px #00eaff12;
   overflow: hidden;
-  box-shadow: 0 0 60px #00eaff22;
 }
 
-.modal-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 20px;
-}
-
-.modal-title {
-  font-weight: 800;
-  font-size: 14px;
-}
-
-.close-btn {
-  border: none;
-  background: #ffffff12;
-  color: white;
-  font-size: 25px;
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  background: #ff3155;
-}
-
-.player {
+#playlist-player {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: none;
-  display: block;
-  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #080b17;
 }
 
-/* Footer */
+#playlist-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* LOADING */
+
+.loading-text {
+  text-align: center;
+  color: var(--cyan);
+  padding: 35px 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.loading-dot {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .3; }
+}
+
+/* FOOTER */
 
 footer {
   border-top: 1px solid #ffffff12;
@@ -473,9 +337,10 @@ footer a {
   text-decoration: none;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 600px) {
+
   .navbar {
     flex-direction: column;
     padding: 17px 12px;
@@ -519,44 +384,11 @@ footer a {
     flex-direction: column;
   }
 
-  .video-card {
-    gap: 12px;
-    padding: 9px;
-  }
-
-  .thumbnail-wrap {
-    width: 115px;
-  }
-
-  .video-title {
-    font-size: 12px;
-  }
-
-  .video-number {
-    font-size: 9px;
-    margin-bottom: 5px;
-  }
-
-  .video-subtitle {
-    font-size: 9px;
-  }
-
-  .watch-label {
-    display: none;
-  }
-
-  .play-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  .playlist-shell {
+    padding: 6px;
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  #cursor-glow {
-    display: block;
-  }
-}
 </style>
 </head>
 
@@ -565,21 +397,39 @@ footer a {
 <div id="cursor-glow"></div>
 
 <!-- NAVIGATION -->
+
 <nav class="navbar">
-  <div class="logo">JATIN<span>GAMERY4</span></div>
+
+  <div class="logo">
+    JATIN<span>GAMERY4</span>
+  </div>
 
   <div class="nav-buttons">
-    <a href="map.html" class="nav-btn">MAPS</a>
+
+    <a href="map.html" class="nav-btn">
+      MAPS
+    </a>
+
     <a href="https://0xme.github.io/ItemID2/?mode=2&page=1"
-       target="_blank" rel="noopener" class="nav-btn">CODES</a>
-    <a href="assets.html" class="nav-btn">ASSETS</a>
+       target="_blank" rel="noopener" class="nav-btn">
+      CODES
+    </a>
+
+    <a href="assets.html" class="nav-btn">
+      ASSETS
+    </a>
+
   </div>
+
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
 
-  <div class="hero-label">CRAFTLAND CREATOR HUB</div>
+  <div class="hero-label">
+    CRAFTLAND CREATOR HUB
+  </div>
 
   <h1>JATINGAMERY4</h1>
 
@@ -593,6 +443,7 @@ footer a {
   <div class="hero-line"></div>
 
   <div class="social-row">
+
     <a class="social-btn instagram"
        href="https://www.instagram.com/jatingamery4/"
        target="_blank" rel="noopener">
@@ -609,190 +460,155 @@ footer a {
        href="mailto:jatingamery411@gmail.com">
        CONTACT ME ↗
     </a>
+
   </div>
 
 </section>
 
-<!-- VIDEOS -->
+<!-- AUTOMATIC YOUTUBE PLAYLIST -->
+
 <main class="content">
 
   <div class="section-heading">
-    <h2>FEATURED <span>VIDEOS</span></h2>
-    <p>TOP 12 · CRAFTLAND TUTORIALS</p>
+
+    <h2>
+      CRAFTLAND <span>VIDEOS</span>
+    </h2>
+
+    <p>
+      MY YOUTUBE PLAYLIST
+    </p>
+
   </div>
 
-  <div class="video-list" id="video-list"></div>
+  <div class="playlist-shell">
+
+    <div id="playlist-player">
+
+      <div class="loading-text">
+        LOADING VIDEOS
+        <span class="loading-dot">...</span>
+      </div>
+
+    </div>
+
+  </div>
 
 </main>
 
-<!-- VIDEO PLAYER -->
-<div class="modal" id="video-modal">
-  <div class="modal-box">
-    <div class="modal-top">
-      <div class="modal-title" id="modal-title">Now Playing</div>
-      <button class="close-btn" id="close-modal"
-              aria-label="Close video">&times;</button>
-    </div>
-
-    <iframe
-      class="player"
-      id="video-player"
-      src=""
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
 <!-- FOOTER -->
+
 <footer>
-  <h3>JATIN<span>GAMERY4</span></h3>
+
+  <h3>
+    JATIN<span>GAMERY4</span>
+  </h3>
 
   <p>
     Craftland Tutorials · Maps · Scripts · Assets
     <br>
-    Email: <a href="mailto:jatingamery411@gmail.com">
+
+    Email:
+    <a href="mailto:jatingamery411@gmail.com">
       jatingamery411@gmail.com
     </a>
+
     <br><br>
+
     © 2026 JATINGAMERY4. All Rights Reserved.
+
   </p>
+
 </footer>
 
 <script>
 
-/* =====================================
-   ADD YOUR 12 VIDEOS HERE
-   ===================================== */
+/* ======================================
+   YOUTUBE AUTOMATIC PLAYLIST PLAYER
+   ====================================== */
 
-const videos = [
-  {
-    id: "CnAU9C-dseg",
-    title: "Heart Lives",
-    subtitle: "Craftland Tutorial"
-  },
-  {
-    id: "QfLS0kn8MWw",
-    title: "Add Missions",
-    subtitle: "Craftland Tutorial"
-  },
-  {
-    id: "SYV8RvdVBnI",
-    title: "Timer Script",
-    subtitle: "Craftland Tutorial"
-  },
+let playlistPlayer;
 
-  // Replace the next 9 entries with your videos.
+function onYouTubeIframeAPIReady() {
 
-  { id: "VIDEO_ID_4", title: "Your Video Title 04", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_5", title: "Your Video Title 05", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_6", title: "Your Video Title 06", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_7", title: "Your Video Title 07", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_8", title: "Your Video Title 08", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_9", title: "Your Video Title 09", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_10", title: "Your Video Title 10", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_11", title: "Your Video Title 11", subtitle: "Craftland Tutorial" },
-  { id: "VIDEO_ID_12", title: "Your Video Title 12", subtitle: "Craftland Tutorial" }
-];
+  playlistPlayer = new YT.Player("playlist-player", {
 
-/* CREATE VIDEO ROWS */
+    width: "100%",
+    height: "100%",
 
-const videoList = document.getElementById("video-list");
+    playerVars: {
 
-videos.forEach((video, index) => {
+      listType: "playlist",
 
-  const card = document.createElement("div");
-  card.className = "video-card";
+      list: "PLFI5jnn1AiNRahLYeGpvl9EpXfwlNOknC",
 
-  const thumb = document.createElement("div");
-  thumb.className = "thumbnail-wrap";
+      playsinline: 1,
 
-  const img = document.createElement("img");
-  img.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-  img.alt = video.title;
-  img.loading = "lazy";
+      rel: 0
 
-  const play = document.createElement("div");
-  play.className = "play-icon";
-  play.textContent = "▶";
+    },
 
-  thumb.append(img, play);
+    events: {
 
-  const info = document.createElement("div");
-  info.className = "video-info";
+      onReady: function(event) {
 
-  const number = document.createElement("div");
-  number.className = "video-number";
-  number.textContent = `VIDEO  ${String(index + 1).padStart(2, "0")}`;
+        event.target.setShuffle(true);
 
-  const title = document.createElement("div");
-  title.className = "video-title";
-  title.textContent = video.title;
+      },
 
-  const subtitle = document.createElement("div");
-  subtitle.className = "video-subtitle";
-  subtitle.textContent = video.subtitle;
+      onError: function(event) {
 
-  info.append(number, title, subtitle);
+        document.getElementById("playlist-player").innerHTML = `
+          <div class="loading-text">
+            Unable to load playlist.
+            <br><br>
+            <a href="https://www.youtube.com/playlist?list=PLFI5jnn1AiNRahLYeGpvl9EpXfwlNOknC"
+               target="_blank"
+               rel="noopener"
+               style="color:#00eaff;">
+               OPEN PLAYLIST ON YOUTUBE ↗
+            </a>
+          </div>
+        `;
 
-  const watch = document.createElement("div");
-  watch.className = "watch-label";
-  watch.textContent = "WATCH ↗";
+      }
 
-  card.append(thumb, info, watch);
+    }
 
-  card.addEventListener("click", () => {
-    if (!video.id || video.id.startsWith("VIDEO_ID_")) return;
-
-    document.getElementById("modal-title").textContent = video.title;
-
-    document.getElementById("video-player").src =
-      `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`;
-
-    document.getElementById("video-modal").classList.add("active");
-    document.body.style.overflow = "hidden";
   });
 
-  videoList.appendChild(card);
-
-});
-
-/* CLOSE VIDEO */
-
-function closeVideo() {
-  document.getElementById("video-modal").classList.remove("active");
-  document.getElementById("video-player").src = "";
-  document.body.style.overflow = "";
 }
 
-document.getElementById("close-modal")
-  .addEventListener("click", closeVideo);
+/* LOAD YOUTUBE API */
 
-document.getElementById("video-modal")
-  .addEventListener("click", (e) => {
-    if (e.target.id === "video-modal") closeVideo();
-  });
+const youtubeAPI = document.createElement("script");
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeVideo();
-});
+youtubeAPI.src = "https://www.youtube.com/iframe_api";
 
-/* FOLLOWING CURSOR GLOW */
+document.head.appendChild(youtubeAPI);
+
+
+/* ======================================
+   SMOOTH CURSOR FOLLOWING GLOW
+   ====================================== */
 
 const glow = document.getElementById("cursor-glow");
 
 let mouseX = 0;
 let mouseY = 0;
+
 let glowX = 0;
 let glowY = 0;
 
 document.addEventListener("mousemove", (e) => {
+
   mouseX = e.clientX;
   mouseY = e.clientY;
+
 });
 
 function animateGlow() {
+
   glowX += (mouseX - glowX) * 0.12;
   glowY += (mouseY - glowY) * 0.12;
 
@@ -800,6 +616,7 @@ function animateGlow() {
   glow.style.top = glowY + "px";
 
   requestAnimationFrame(animateGlow);
+
 }
 
 animateGlow();
