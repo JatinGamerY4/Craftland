@@ -1,49 +1,420 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Craftland - Map Codes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <title>JATINGAMERY4 | Map Codes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+    * {
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #080b18;
+      --cyan: #00eaff;
+      --purple: #9b5cff;
+      --text: #f4f7ff;
+      --muted: #9ca8c2;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(0,234,255,.12), transparent 35%),
+        radial-gradient(ellipse at 85% 35%, rgba(155,92,255,.13), transparent 35%),
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(0,234,255,.07);
+      filter: blur(75px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: min(1150px, 92%);
+      margin: 25px auto 0;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: rgba(17,22,42,.72);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.2);
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--cyan), #fff, var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #c5cde0;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      padding: 11px 15px;
+      border-radius: 9px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      background: linear-gradient(110deg, rgba(0,234,255,.18), rgba(155,92,255,.2));
+      box-shadow: inset 0 0 0 1px rgba(0,234,255,.18);
+    }
+
+    /* HEADER */
+
+    .hero {
+      width: min(900px, 92%);
+      margin: 85px auto 45px;
       text-align: center;
     }
 
-    h1 {
-      color: #1976d2;
-      font-size: 26px;
-      margin-bottom: 40px;
+    .hero-tag {
+      display: inline-block;
+      padding: 9px 17px;
+      border: 1px solid rgba(0,234,255,.3);
+      border-radius: 50px;
+      color: var(--cyan);
+      background: rgba(0,234,255,.06);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
     }
 
-    .code-text {
-      font-size: 15px;
-      font-weight: bold;
-      white-space: pre-line;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 1000px;
-      margin: 0 auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(30px, 6vw, 55px);
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(100deg, #fff 10%, var(--cyan) 48%, var(--purple) 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 25px rgba(0,234,255,.13));
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* CODE LIST */
+
+    .codes-container {
+      width: min(850px, 92%);
+      margin: 0 auto 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .code-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 20px;
+      background: rgba(18,24,45,.78);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.17);
+      transition: .25s;
+    }
+
+    .code-card:hover {
+      border-color: rgba(0,234,255,.4);
+      transform: translateY(-3px);
+    }
+
+    .code-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .code-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .code-value {
+      color: #aebbd5;
+      font-family: monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+      user-select: text;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      min-width: 95px;
+      padding: 11px 15px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      cursor: pointer;
+      background: linear-gradient(110deg, #00bcd4, #7555ff);
+      transition: .25s;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,234,255,.2);
+    }
+
+    .copy-btn.copied {
+      background: linear-gradient(110deg, #119b67, #16bd83);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #78849f;
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    footer span {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        padding: 16px 10px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 3px;
+      }
+
+      .nav-links a {
+        padding: 10px 11px;
+        font-size: 10px;
+      }
+
+      .hero {
+        margin-top: 65px;
+      }
+
+      .hero p {
+        font-size: 12px;
+      }
+
+      .code-card {
+        padding: 15px;
+        gap: 10px;
+      }
+
+      .code-name {
+        font-size: 12px;
+      }
+
+      .code-value {
+        font-size: 10px;
+      }
+
+      .copy-btn {
+        min-width: 75px;
+        padding: 10px 9px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .code-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .copy-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Craftland - Map Codes</h1>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <div class="code-text">
-A HORROR ESCAPE: #FREEFIRECE5935BC7F2994C1CDB225F0CA7A62105676
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">JATINGAMERY4</div>
 
-GTA-V: #FREEFIRE35E6F44683F4249258DA79F5E43EA70F5676
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="maps.html">MAPS</a>
+      <a href="https://0xme.github.io/ItemID2/?mode=2&page=1" target="_blank">CODES</a>
+      <a href="assets.html">ASSETS</a>
+    </div>
+  </nav>
 
-PRACTICE: #FREEFIREF8D6C651B98E56EC79FD95F8F959AFFC5676
+  <!-- HEADER -->
+  <section class="hero">
+    <div class="hero-tag">CRAFTLAND MAP COLLECTION</div>
 
-1V1: #FREEFIREFE0167061E98A805EA00D63466F3530C5676
-  </div>
+    <h1>MAP CODES</h1>
+
+    <p>
+      Find your favourite Craftland map code below.
+      Simply click the COPY button and use the code in Free Fire.
+    </p>
+  </section>
+
+  <!-- MAP CODES -->
+  <section class="codes-container">
+
+    <div class="code-card">
+      <div class="code-info">
+        <div class="code-name">A HORROR ESCAPE</div>
+        <div class="code-value">#FREEFIRECE5935BC7F2994C1CDB225F0CA7A62105676</div>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+    </div>
+
+    <div class="code-card">
+      <div class="code-info">
+        <div class="code-name">GTA-V</div>
+        <div class="code-value">#FREEFIRE35E6F44683F4249258DA79F5E43EA70F5676</div>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+    </div>
+
+    <div class="code-card">
+      <div class="code-info">
+        <div class="code-name">PRACTICE</div>
+        <div class="code-value">#FREEFIREF8D6C651B98E56EC79FD95F8F959AFFC5676</div>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+    </div>
+
+    <div class="code-card">
+      <div class="code-info">
+        <div class="code-name">1V1</div>
+        <div class="code-value">#FREEFIREFE0167061E98A805EA00D63466F3530C5676</div>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">COPY CODE</button>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 <span>JATINGAMERY4</span> — All Rights Reserved.
+  </footer>
+
+  <script>
+    // Cursor glow
+    const cursorGlow = document.getElementById("cursorGlow");
+
+    if (window.matchMedia("(pointer: fine)").matches) {
+      document.addEventListener("mousemove", (e) => {
+        cursorGlow.style.left = e.clientX + "px";
+        cursorGlow.style.top = e.clientY + "px";
+      });
+    } else {
+      cursorGlow.style.display = "none";
+    }
+
+    // Copy map code
+    async function copyCode(button) {
+      const code = button.parentElement.querySelector(".code-value").textContent.trim();
+
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch (error) {
+        const textarea = document.createElement("textarea");
+        textarea.value = code;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+      }
+
+      const originalText = button.textContent;
+      button.textContent = "COPIED ✓";
+      button.classList.add("copied");
+
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove("copied");
+      }, 1800);
+    }
+  </script>
 
 </body>
 </html>
