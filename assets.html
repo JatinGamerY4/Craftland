@@ -1,134 +1,901 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Craftland - Assets Codes</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070914">
 
-    body {
-      margin: 0;
-      padding: 16px;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
+<title>JATINGAMERY4 | Craftland Assets</title>
 
-    .heading {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1976d2;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    #searchInput {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #aaa;
-      margin-bottom: 20px;
-    }
+<style>
 
-    .code-item {
-      background-color: white;
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 16px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      margin-bottom: 15px;
-      word-wrap: break-word;
-    }
+:root {
+  --bg: #070914;
+  --cyan: #00eaff;
+  --purple: #a855f7;
+  --text: #f4f7ff;
+  --muted: #929bb5;
+}
 
-    .hidden {
-      display: none;
-    }
-  </style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 15% 10%, #172d5b55, transparent 40%),
+    radial-gradient(ellipse at 90% 35%, #6d28d933, transparent 38%),
+    radial-gradient(ellipse at 50% 100%, #003d5540, transparent 45%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .12;
+  background-image: radial-gradient(#8ca8ff .7px, transparent .7px);
+  background-size: 28px 28px;
+}
+
+/* CURSOR GLOW */
+
+#cursor-glow {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(circle,
+    #00eaff22 0%,
+    #536dff12 40%,
+    transparent 70%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #cursor-glow {
+    display: block;
+  }
+}
+
+/* NAVIGATION */
+
+.navbar {
+  max-width: 1250px;
+  width: calc(100% - 40px);
+  margin: 24px auto 0;
+  padding: 13px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: #101426c9;
+  border: 1px solid #ffffff17;
+  border-radius: 16px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 35px #0005;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--cyan);
+  text-shadow: 0 0 15px #00eaff88;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #dce7ff;
+  padding: 11px 22px;
+  border-radius: 10px;
+  border: 1px solid #ffffff19;
+  background: #ffffff08;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: white;
+  border-color: var(--cyan);
+  background: #00eaff14;
+  box-shadow: 0 0 18px #00eaff35;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+  max-width: 1000px;
+  margin: 75px auto 55px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 30px;
+  border: 1px solid #00eaff55;
+  color: var(--cyan);
+  background: #00eaff0c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  box-shadow: 0 0 20px #00eaff15;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(35px, 7vw, 65px);
+  font-weight: 800;
+  margin-top: 22px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  background: linear-gradient(100deg, #ffffff, #00eaff, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 20px #00eaff20);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.hero-line {
+  width: 100px;
+  height: 3px;
+  margin: 25px auto 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  box-shadow: 0 0 15px var(--cyan);
+}
+
+/* ASSET CONTAINER */
+
+.content {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px 70px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(17px, 3vw, 23px);
+  letter-spacing: 1px;
+}
+
+.section-heading h2 span {
+  color: var(--cyan);
+}
+
+.asset-count {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 9px 13px;
+  border: 1px solid #00eaff35;
+  background: #00eaff0c;
+  border-radius: 8px;
+}
+
+/* SEARCH */
+
+.search-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 17px 50px 17px 18px;
+  border-radius: 12px;
+  border: 1px solid #ffffff20;
+  outline: none;
+  background: #11182b;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: .3s;
+}
+
+.search-box input::placeholder {
+  color: #7e8ba8;
+}
+
+.search-box input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 22px #00eaff20;
+}
+
+.search-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--cyan);
+  pointer-events: none;
+}
+
+/* SEARCH INFO */
+
+.search-info {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0 0 15px 3px;
+  letter-spacing: .5px;
+}
+
+/* ASSET ROWS */
+
+.asset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.asset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 17px 18px;
+  background: linear-gradient(110deg, #141b31, #101426);
+  border: 1px solid #ffffff12;
+  border-radius: 13px;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.asset-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(var(--cyan), var(--purple));
+  opacity: .7;
+}
+
+.asset-item:hover {
+  transform: translateX(5px);
+  border-color: #00eaff65;
+  box-shadow: 0 5px 25px #00eaff12;
+}
+
+.asset-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.asset-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f4f7ff;
+  margin-bottom: 8px;
+  letter-spacing: .5px;
+}
+
+.asset-code {
+  color: #8c9cbd;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  padding: 11px 15px;
+  border-radius: 9px;
+  border: 1px solid #00eaff50;
+  background: #00eaff0e;
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.copy-btn:hover {
+  background: linear-gradient(110deg, #00bcd4, #4169ff);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 0 20px #00eaff50;
+  transform: translateY(-2px);
+}
+
+.copy-btn.copied {
+  background: #12b98120;
+  border-color: #12d69b;
+  color: #12d69b;
+}
+
+/* NO RESULTS */
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 45px 15px;
+  background: #11182b;
+  border: 1px dashed #ffffff25;
+  border-radius: 14px;
+}
+
+.no-results h3 {
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 17px;
+}
+
+.no-results p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #ffffff12;
+  padding: 30px 20px;
+  text-align: center;
+  background: #080b17;
+}
+
+footer h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+footer h3 span {
+  color: var(--cyan);
+}
+
+footer p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 17px 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    gap: 7px;
+  }
+
+  .nav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 5px;
+    font-size: 10px;
+  }
+
+  .hero {
+    margin: 55px auto 45px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .asset-item {
+    padding: 13px 11px;
+    gap: 9px;
+  }
+
+  .asset-name {
+    font-size: 12px;
+  }
+
+  .asset-code {
+    font-size: 9px;
+  }
+
+  .copy-btn {
+    padding: 10px 9px;
+    font-size: 9px;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="heading">Craftland - Assets Codes</div>
+<div id="cursor-glow"></div>
 
-  <input type="text" id="searchInput" placeholder="Search by keyword...">
+<!-- NAVIGATION -->
 
-  <div id="codeList">
-    <div class="code-item" data-keywords="ship">
-      SHIP: #ASSET9B5BA7E05B6743E1A06B72A5F589805F5676
-    </div>
-    <div class="code-item" data-keywords="boat">
-      BOAT: #ASSETE7356CBD95D144B7ACC278A0462330CF5676
-    </div>
-    <div class="code-item" data-keywords="air balloon">
-      AIR BALLOON: #ASSETC6F8F0901BA945A09D05439D1A35EE235676
-    </div>
-    <div class="code-item" data-keywords="3d bomb">
-      3D BOMB: #ASSET23A4AA12B9574ABCA0C7AD804E62046A5676
-    </div>
-    <div class="code-item" data-keywords="slide">
-      SLIDE: #ASSET01B36E81FFA8495F9060871C8D120D215676
-    </div>
-    <div class="code-item" data-keywords="jeep">
-      JEEP: #ASSETCFF696C7E3034E229570FBAD43BF6F285676
-    </div>
-    <div class="code-item" data-keywords="normal tree">
-      NORMAL TREE: #ASSET3D779386B05F409C90EF2995F89F7EA05676
-    </div>
-    <div class="code-item" data-keywords="spikes">
-      SPIKES: #ASSET7D300F16DAD44D1DA5D072D71CEA16735676
-    </div>
-    <div class="code-item" data-keywords="tillt tree">
-      TILLT TREE: #ASSETA6BE66BB84B044599C68E58051C5AD885676
-    </div>
-    <div class="code-item" data-keywords="assets pack">
-      ASSETS PACK: #ASSETDA7027426F7642B09207D9F470E758845676
-    </div>
-    <div class="code-item" data-keywords="sliding door">
-      SLIDING DOOR: #ASSET6CDD796DE3D045319E51447CD9A8A7B25676
-    </div>
-    <div class="code-item" data-keywords="squid game house">
-      SQUID GAME HOUSE: #ASSETE568C1CA07574F38A7C4A288D1BECE725676
-    </div>
-    <div class="code-item" data-keywords="squid game logo">
-      SQUID GAME LOGO: #ASSET19814F4C0E0F4878BE78334AC64DD4FC5676
-    </div>
-    <div class="code-item" data-keywords="roads assets pack">
-      ROADS ASSETS PACK: #ASSETE3758A5EB4B44C94AC4A129ED709CB605676
-    </div>
-    <div class="code-item" data-keywords="bed">
-      BED: #ASSETCBBE7EF63C134BB6B4B693528B5AFD115676
-    </div>
-    <div class="code-item" data-keywords="lattu">
-      LATTU: #ASSET194E8140D7B7419D9E85939E4F5B85E25676
-    </div>
-    <div class="code-item" data-keywords="key">
-      KEY: #ASSET48D28BC4C88843138B9A960FAEE465225676
-    </div>
-    <div class="code-item" data-keywords="hud remove">
-      HUD REMOVE: #ASSETFDA812DD07044F8D97DC19F579E94D675676
-    </div>
-    <div class="code-item" data-keywords="pressure plate">
-      PRESSURE PLATE: #ASSETD5BA48C7FEE34D878686CE42E242C13B5676
+<nav class="navbar">
+
+  <div class="logo">
+    JATIN<span>GAMERY4</span>
+  </div>
+
+  <div class="nav-buttons">
+
+    <a href="index.html" class="nav-btn">
+      HOME
+    </a>
+
+    <a href="map.html" class="nav-btn">
+      MAPS
+    </a>
+
+    <a href="https://0xme.github.io/ItemID2/?mode=2&page=1"
+       target="_blank" rel="noopener" class="nav-btn">
+      CODES
+    </a>
+
+    <a href="assets.html" class="nav-btn active">
+      ASSETS
+    </a>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-label">
+    CRAFTLAND ASSET LIBRARY
+  </div>
+
+  <h1>ASSETS CODES</h1>
+
+  <p>
+    Find useful Craftland assets in one place.
+    Search your favourite assets and copy their
+    codes instantly with just one click.
+  </p>
+
+  <div class="hero-line"></div>
+
+</section>
+
+<!-- ASSET LIBRARY -->
+
+<main class="content">
+
+  <div class="section-heading">
+
+    <h2>
+      AVAILABLE <span>ASSETS</span>
+    </h2>
+
+    <div class="asset-count" id="assetCount">
+      19 ASSETS
     </div>
 
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const codeItems = document.querySelectorAll('.code-item');
+  </div>
 
-    searchInput.addEventListener('input', function () {
-      const query = this.value.trim().toLowerCase();
-      codeItems.forEach(item => {
-        const keywords = item.dataset.keywords.toLowerCase();
-        if (keywords.includes(query) || query === '') {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  </script>
+  <!-- SEARCH -->
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search assets... (e.g. Ship, Jeep, Tree)"
+      autocomplete="off"
+    >
+
+    <span class="search-icon">⌕</span>
+
+  </div>
+
+  <div class="search-info" id="searchInfo">
+    Showing all 19 assets
+  </div>
+
+  <!-- ASSET LIST -->
+
+  <div class="asset-list" id="codeList">
+
+    <div class="asset-item" data-keywords="ship">
+      <div class="asset-info">
+        <div class="asset-name">SHIP</div>
+        <div class="asset-code">#ASSET9B5BA7E05B6743E1A06B72A5F589805F5676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="boat">
+      <div class="asset-info">
+        <div class="asset-name">BOAT</div>
+        <div class="asset-code">#ASSETE7356CBD95D144B7ACC278A0462330CF5676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="air balloon">
+      <div class="asset-info">
+        <div class="asset-name">AIR BALLOON</div>
+        <div class="asset-code">#ASSETC6F8F0901BA945A09D05439D1A35EE235676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="3d bomb">
+      <div class="asset-info">
+        <div class="asset-name">3D BOMB</div>
+        <div class="asset-code">#ASSET23A4AA12B9574ABCA0C7AD804E62046A5676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="slide">
+      <div class="asset-info">
+        <div class="asset-name">SLIDE</div>
+        <div class="asset-code">#ASSET01B36E81FFA8495F9060871C8D120D215676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="jeep">
+      <div class="asset-info">
+        <div class="asset-name">JEEP</div>
+        <div class="asset-code">#ASSETCFF696C7E3034E229570FBAD43BF6F285676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="normal tree">
+      <div class="asset-info">
+        <div class="asset-name">NORMAL TREE</div>
+        <div class="asset-code">#ASSET3D779386B05F409C90EF2995F89F7EA05676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="spikes">
+      <div class="asset-info">
+        <div class="asset-name">SPIKES</div>
+        <div class="asset-code">#ASSET7D300F16DAD44D1DA5D072D71CEA16735676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="tillt tree tilt tree">
+      <div class="asset-info">
+        <div class="asset-name">TILLT TREE</div>
+        <div class="asset-code">#ASSETA6BE66BB84B044599C68E58051C5AD885676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="assets pack">
+      <div class="asset-info">
+        <div class="asset-name">ASSETS PACK</div>
+        <div class="asset-code">#ASSETDA7027426F7642B09207D9F470E758845676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="sliding door">
+      <div class="asset-info">
+        <div class="asset-name">SLIDING DOOR</div>
+        <div class="asset-code">#ASSET6CDD796DE3D045319E51447CD9A8A7B25676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="squid game house">
+      <div class="asset-info">
+        <div class="asset-name">SQUID GAME HOUSE</div>
+        <div class="asset-code">#ASSETE568C1CA07574F38A7C4A288D1BECE725676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="squid game logo">
+      <div class="asset-info">
+        <div class="asset-name">SQUID GAME LOGO</div>
+        <div class="asset-code">#ASSET19814F4C0E0F4878BE78334AC64DD4FC5676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="roads assets pack road">
+      <div class="asset-info">
+        <div class="asset-name">ROADS ASSETS PACK</div>
+        <div class="asset-code">#ASSETE3758A5EB4B44C94AC4A129ED709CB605676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="bed">
+      <div class="asset-info">
+        <div class="asset-name">BED</div>
+        <div class="asset-code">#ASSETCBBE7EF63C134BB6B4B693528B5AFD115676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="lattu">
+      <div class="asset-info">
+        <div class="asset-name">LATTU</div>
+        <div class="asset-code">#ASSET194E8140D7B7419D9E85939E4F5B85E25676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="key">
+      <div class="asset-info">
+        <div class="asset-name">KEY</div>
+        <div class="asset-code">#ASSET48D28BC4C88843138B9A960FAEE465225676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="hud remove">
+      <div class="asset-info">
+        <div class="asset-name">HUD REMOVE</div>
+        <div class="asset-code">#ASSETFDA812DD07044F8D97DC19F579E94D675676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+    <div class="asset-item" data-keywords="pressure plate">
+      <div class="asset-info">
+        <div class="asset-name">PRESSURE PLATE</div>
+        <div class="asset-code">#ASSETD5BA48C7FEE34D878686CE42E242C13B5676</div>
+      </div>
+      <button class="copy-btn">COPY CODE</button>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">
+    <h3>NO ASSETS FOUND</h3>
+    <p>Try searching with another keyword.</p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>
+    JATIN<span>GAMERY4</span>
+  </h3>
+
+  <p>
+    Craftland Tutorials · Maps · Scripts · Assets
+    <br>
+
+    Email:
+    <a href="mailto:jatingamery411@gmail.com">
+      jatingamery411@gmail.com
+    </a>
+
+    <br><br>
+
+    © 2026 JATINGAMERY4. All Rights Reserved.
+  </p>
+
+</footer>
+
+<script>
+
+/* SEARCH SYSTEM */
+
+const searchInput = document.getElementById("searchInput");
+const assetItems = document.querySelectorAll(".asset-item");
+const assetCount = document.getElementById("assetCount");
+const searchInfo = document.getElementById("searchInfo");
+const noResults = document.getElementById("noResults");
+
+function searchAssets() {
+
+  const query = searchInput.value.trim().toLowerCase();
+
+  let visibleCount = 0;
+
+  assetItems.forEach(item => {
+
+    const keywords = item.dataset.keywords.toLowerCase();
+    const name = item.querySelector(".asset-name").textContent.toLowerCase();
+    const code = item.querySelector(".asset-code").textContent.toLowerCase();
+
+    const matches =
+      keywords.includes(query) ||
+      name.includes(query) ||
+      code.includes(query);
+
+    item.style.display = matches ? "flex" : "none";
+
+    if (matches) visibleCount++;
+
+  });
+
+  assetCount.textContent = visibleCount + " ASSETS";
+
+  searchInfo.textContent = query
+    ? `Found ${visibleCount} matching assets`
+    : `Showing all ${visibleCount} assets`;
+
+  noResults.style.display =
+    visibleCount === 0 ? "block" : "none";
+
+}
+
+searchInput.addEventListener("input", searchAssets);
+
+
+/* COPY ASSET CODE */
+
+document.querySelectorAll(".copy-btn").forEach(button => {
+
+  button.addEventListener("click", async () => {
+
+    const code = button.parentElement
+      .querySelector(".asset-code")
+      .textContent.trim();
+
+    try {
+
+      await navigator.clipboard.writeText(code);
+
+      button.textContent = "COPIED ✓";
+      button.classList.add("copied");
+
+      setTimeout(() => {
+        button.textContent = "COPY CODE";
+        button.classList.remove("copied");
+      }, 1600);
+
+    } catch (error) {
+
+      const textArea = document.createElement("textarea");
+
+      textArea.value = code;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      const copied = document.execCommand("copy");
+
+      textArea.remove();
+
+      if (copied) {
+        button.textContent = "COPIED ✓";
+        button.classList.add("copied");
+
+        setTimeout(() => {
+          button.textContent = "COPY CODE";
+          button.classList.remove("copied");
+        }, 1600);
+      } else {
+        button.textContent = "SELECT CODE";
+      }
+
+    }
+
+  });
+
+});
+
+
+/* SMOOTH CURSOR GLOW */
+
+const glow = document.getElementById("cursor-glow");
+
+let mouseX = 0;
+let mouseY = 0;
+let glowX = 0;
+let glowY = 0;
+
+document.addEventListener("mousemove", (e) => {
+
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+});
+
+function animateGlow() {
+
+  glowX += (mouseX - glowX) * 0.12;
+  glowY += (mouseY - glowY) * 0.12;
+
+  glow.style.left = glowX + "px";
+  glow.style.top = glowY + "px";
+
+  requestAnimationFrame(animateGlow);
+
+}
+
+animateGlow();
+
+</script>
 
 </body>
 </html>
