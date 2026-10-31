@@ -1,107 +1,503 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Craftland - Maps Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <title>JATINGAMERY4 | Craftland Maps</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+    * {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1 {
-      color: #1976d2;
-      margin: 0 0 4px;
+    :root {
+      --bg: #080b18;
+      --cyan: #00eaff;
+      --purple: #9b5cff;
+      --text: #f4f7ff;
+      --muted: #9ca8c2;
     }
 
-    h2 {
-      color: #1976d2;
-      font-size: 16px;
-      margin: 0 0 20px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .cards-container {
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(0,234,255,.12), transparent 35%),
+        radial-gradient(ellipse at 85% 35%, rgba(155,92,255,.13), transparent 35%),
+        var(--bg);
+      font-family: 'Inter', sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(0,234,255,.07);
+      filter: blur(75px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: min(1150px, 92%);
+      margin: 25px auto 0;
+      padding: 13px 18px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: rgba(17,22,42,.72);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.2);
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--cyan), #fff, var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
       flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .card {
-      width: 300px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .card-image {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-title {
-      padding: 10px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .bottom-button {
-      margin-top: 40px;
-      display: flex;
       justify-content: center;
     }
 
-    .map-codes-button {
-      background: linear-gradient(to right, #28a745, #ff9800);
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
+    .nav-links a {
+      color: #c5cde0;
       text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      padding: 11px 15px;
+      border-radius: 9px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: white;
+      background: linear-gradient(110deg, rgba(0,234,255,.18), rgba(155,92,255,.2));
+      box-shadow: inset 0 0 0 1px rgba(0,234,255,.18);
+    }
+
+    /* PAGE HEADER */
+
+    .hero {
+      width: min(1050px, 92%);
+      margin: 85px auto 55px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 9px 17px;
+      border: 1px solid rgba(0,234,255,.3);
+      border-radius: 50px;
+      color: var(--cyan);
+      background: rgba(0,234,255,.06);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(35px, 7vw, 65px);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: linear-gradient(100deg, #fff 10%, var(--cyan) 48%, var(--purple) 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 25px rgba(0,234,255,.13));
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* MAP CARDS */
+
+    .maps-section {
+      width: min(1050px, 92%);
+      margin: 0 auto 65px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      display: block;
+      overflow: hidden;
+      text-decoration: none;
+      color: white;
+      background: rgba(18,24,45,.78);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      transition: .3s ease;
+      box-shadow: 0 10px 35px rgba(0,0,0,.2);
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0,234,255,.45);
+      box-shadow: 0 15px 40px rgba(0,234,255,.09);
+    }
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      background: #101629;
+    }
+
+    .card-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .card:hover .card-image {
+      transform: scale(1.05);
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,.12);
+      transition: .3s;
+    }
+
+    .play-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 4px;
+      border-radius: 50%;
+      color: white;
+      font-size: 22px;
+      background: rgba(0,0,0,.65);
+      border: 1px solid rgba(255,255,255,.55);
+      backdrop-filter: blur(8px);
+      transition: .3s;
+    }
+
+    .card:hover .play-icon {
+      background: linear-gradient(120deg, #00bcd4, #7555ff);
+      transform: scale(1.12);
+      border-color: transparent;
+    }
+
+    .card-info {
+      padding: 18px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .card-subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* MAP CODES BUTTON */
+
+    .bottom-button {
+      display: flex;
+      justify-content: center;
+      margin: 45px auto 85px;
+    }
+
+    .map-codes-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      background: linear-gradient(110deg, #00bcd4, #7555ff);
+      box-shadow: 0 5px 25px rgba(0,190,255,.2);
+      transition: .25s;
+    }
+
+    .map-codes-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,234,255,.25);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #78849f;
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    footer span {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        padding: 16px 10px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 3px;
+      }
+
+      .nav-links a {
+        padding: 10px 11px;
+        font-size: 10px;
+      }
+
+      .hero {
+        margin-top: 65px;
+      }
+
+      .hero p {
+        font-size: 12px;
+      }
+
+      .cards-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card-info {
+        padding: 15px;
+      }
+
+      .card-title {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Craftland</h1>
-  <h2>Maps Page</h2>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <div class="cards-container">
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">JATINGAMERY4</div>
 
-    <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1" target="_blank" class="card">
-      <img class="card-image" src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg">
-      <div class="card-title">A Horror Escape Chapter 1</div>
-    </a>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="maps.html" class="active">MAPS</a>
+      <a href="https://0xme.github.io/ItemID2/?mode=2&page=1" target="_blank">CODES</a>
+      <a href="assets.html">ASSETS</a>
+    </div>
+  </nav>
 
-    <a href="https://youtu.be/-r43gZNiKko?si=uZ6ckHz3s4fDK3nY" target="_blank" class="card">
-      <img class="card-image" src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg">
-      <div class="card-title">GTA-V</div>
-    </a>
+  <!-- HEADER -->
+  <section class="hero">
+    <div class="hero-tag">CRAFTLAND MAP COLLECTION</div>
 
-    <a href="https://youtu.be/dt5V3lKooW8?si=jMtCk2jo_ZlCwReO" target="_blank" class="card">
-      <img class="card-image" src="https://img.youtube.com/vi/dt5V3lKooW8/hqdefault.jpg">
-      <div class="card-title">1v1 Special Map</div>
-    </a>
+    <h1>MY MAPS</h1>
 
-    <a href="https://youtu.be/DM2Ki6dNIcw?si=zTdmd85PnanXYFcu" target="_blank" class="card">
-      <img class="card-image" src="https://img.youtube.com/vi/DM2Ki6dNIcw/hqdefault.jpg">
-      <div class="card-title">Practice + Fun</div>
-    </a>
+    <p>
+      Explore my Free Fire Craftland maps. Choose your favourite map
+      and click to watch its gameplay on YouTube.
+    </p>
+  </section>
 
-  </div>
+  <!-- MAP CARDS -->
+  <section class="maps-section">
 
-  <div class="bottom-button">
-    <a href="map-codes.html" class="map-codes-button">Map Codes</a>
-  </div>
+    <div class="cards-container">
+
+      <a href="https://youtu.be/AUtFiXv50N8?si=9F-TBh2mRGrrq3s1"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="card">
+
+        <div class="image-wrapper">
+          <img class="card-image"
+               src="https://img.youtube.com/vi/AUtFiXv50N8/hqdefault.jpg"
+               alt="A Horror Escape Chapter 1"
+               loading="lazy">
+
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="card-title">A Horror Escape Chapter 1</div>
+          <div class="card-subtitle">CRAFTLAND MAP</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/-r43gZNiKko?si=uZ6ckHz3s4fDK3nY"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="card">
+
+        <div class="image-wrapper">
+          <img class="card-image"
+               src="https://img.youtube.com/vi/-r43gZNiKko/hqdefault.jpg"
+               alt="GTA-V"
+               loading="lazy">
+
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="card-title">GTA-V</div>
+          <div class="card-subtitle">CRAFTLAND MAP</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/dt5V3lKooW8?si=jMtCk2jo_ZlCwReO"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="card">
+
+        <div class="image-wrapper">
+          <img class="card-image"
+               src="https://img.youtube.com/vi/dt5V3lKooW8/hqdefault.jpg"
+               alt="1v1 Special Map"
+               loading="lazy">
+
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="card-title">1v1 Special Map</div>
+          <div class="card-subtitle">CRAFTLAND MAP</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/DM2Ki6dNIcw?si=zTdmd85PnanXYFcu"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="card">
+
+        <div class="image-wrapper">
+          <img class="card-image"
+               src="https://img.youtube.com/vi/DM2Ki6dNIcw/hqdefault.jpg"
+               alt="Practice + Fun"
+               loading="lazy">
+
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="card-title">Practice + Fun</div>
+          <div class="card-subtitle">CRAFTLAND MAP</div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- MAP CODES BUTTON -->
+    <div class="bottom-button">
+      <a href="map-codes.html" class="map-codes-button">
+        MAP CODES →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 <span>JATINGAMERY4</span> — All Rights Reserved.
+  </footer>
+
+  <script>
+    // Cursor glow
+    const cursorGlow = document.getElementById("cursorGlow");
+
+    if (window.matchMedia("(pointer: fine)").matches) {
+      document.addEventListener("mousemove", (e) => {
+        cursorGlow.style.left = e.clientX + "px";
+        cursorGlow.style.top = e.clientY + "px";
+      });
+    } else {
+      cursorGlow.style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
